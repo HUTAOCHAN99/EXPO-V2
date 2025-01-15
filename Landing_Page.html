@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBSITE EXPO UPNVY X CTARSA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<!-- untuk styling selain tailwind -->
+<style>
+    .bg-primary {
+        background-color: rgb(25, 135, 84, 0.75);
+    }
+
+    /* Animasi floating */
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    .nav-mobile {
+        display: none;
+        /* Default disembunyikan */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(25, 135, 84, 255);
+        color: white;
+        z-index: 40;
+    }
+
+    .nav-mobile.open {
+        display: block;
+        animation: slide-down 0.3s ease-out;
+    }
+
+    .nav-mobile.closing {
+        animation: slide-up 0.3s ease-in;
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: visible;
+        border-right: 0.15em solid white;
+        white-space: nowrap;
+        line-height: 1.5;
+    }
+
+    .blink {
+        animation: blink 0.75s step-end infinite;
+    }
+
+    /* Navbar untuk versi mobile */
+    .nav-mobile {
+        display: none;
+        /* Menyembunyikan navbar secara default */
+        opacity: 0;
+        /* Mulai dengan opacity 0 */
+        transition: opacity 0.3s ease-in-out;
+        /* Menambahkan transisi pada opacity */
+    }
+
+    .nav-mobile.open {
+        display: block;
+        /* Menampilkan navbar ketika tombol di-click */
+        opacity: 1;
+        /* Tampilkan dengan opacity 1 */
+    }
+</style>
+
+<body class="bg-white text-black font-poppins">
+
+    <header class="fixed top-0 left-0 w-full bg-primary z-50">
+        <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
+            <!-- Logo UPN -->
+            <a href="Landing_Page.html">
+                <img src="assets/img/index/logo.png" class="w-20 h-20 my-4" alt="Logo">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="home.html" class="text-white font-medium">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
+                <a href="AboutUs.html" class="text-white font-medium">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium">Contact Us</a>
+            </div>
+
+            <!-- Ikon menu untuk mobile -->
+            <div id="nav-toggle" class="md:hidden text-white text-5xl cursor-pointer">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <!-- Navbar untuk mobile -->
+        <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
+            <a href="home.html" class="block py-2 px-4">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4">Fakultas</a>
+            <a href="AboutUs.html" class="block py-2 px-4">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- Video Background -->
+    <div class="relative h-screen w-full">
+        <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay loop muted playsinline>
+            <source src="assets\video\video-bg.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center flex-col">
+            <!-- flex-col untuk menata elemen secara vertikal -->
+            <div class="text-center">
+                <h1 class="text-white text-2xl md:text-4xl font-semibold typing-animation mt-4"></h1>
+            </div>
+            <a href="Home.html"
+                class="absolute bottom-40 inline-block px-6 py-3 text-white bg-green-500 hover:bg-green-600 font-semibold rounded-lg transition duration-300">
+                Click Here
+            </a>
+            <p class="absolute bottom-0 inline-block px-6 py-3 text-white text-center opacity-40">
+                Jl. Padjajaran Jl. Ring Road Utara No.104, Ngropoh, Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah
+                Istimewa Yogyakarta 55283</p>
+        </div>
+
+    </div>
+
+</body>
+<script>
+    // Pisahkan teks menjadi dua variabel terpisah
+    const text_1 = "Halo guys!";
+    const text_2 = "Selamat datang di Website kami";
+    const typingAnimation = document.querySelector('.typing-animation');
+    let currentTextIndex = 0;
+
+    function typeText() {
+        // Tentukan teks berdasarkan index
+        const text = currentTextIndex === 0 ? text_1 : text_2;
+        typingAnimation.textContent = '';
+
+        // Set kecepatan pengetikan yang tetap
+        const typingSpeed = 150; // Kecepatan tetap per karakter (milidetik)
+
+        let charIndex = 0;
+        const typeInterval = setInterval(() => {
+            if (charIndex < text.length) {
+                typingAnimation.textContent += text[charIndex];
+                charIndex++;
+            } else {
+                clearInterval(typeInterval);
+                // Setelah teks selesai diketik, tambahkan efek blink
+                typingAnimation.classList.add('blink');
+
+                setTimeout(() => {
+                    // Perbarui index teks dan mulai mengetik teks berikutnya
+                    currentTextIndex = (currentTextIndex + 1) % 2; // Hanya ada dua teks
+                    typingAnimation.classList.remove('blink'); // Hapus efek blink sebelum memulai pengetikan teks baru
+                    typeText();
+                }, 2000); // Mengurangi delay antar teks
+            }
+        }, typingSpeed); // Typing speed tetap
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Mulai animasi tanpa delay pada awal
+        typeText(); // langsung memulai typing tanpa delay
+    });
+
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    let isAnimating = false;
+
+    navToggle.addEventListener('click', () => {
+        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (mobileNav.classList.contains('open')) {
+            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
+            isAnimating = true;
+            mobileNav.classList.remove('open');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.classList.remove('closing');
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-up
+        } else {
+            // Jika navbar tertutup, buka dengan animasi slide-down
+            isAnimating = true;
+            mobileNav.classList.add('open');
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-down
+        }
+    });
+
+    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileNav.classList.remove('open');
+            mobileNav.classList.remove('closing');
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<style>
+    /* Coba pilih font */
+    .font-sans {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .bg-primary {
+        background-color: rgb(25, 135, 84);
+    }
+
+    .bg-vr {
+        background-color: rgba(25, 135, 84, 0.6);
+    }
+
+    .bg-menuCarousel {
+        background-color: rgba(33, 96, 66, 0.8);
+    }
+
+    .text-thumbnail {
+        color: rgb(25, 135, 84);
+    }
+
+    /* Animasi floating */
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    .nav-mobile {
+        display: none;
+        /* Default disembunyikan */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(25, 135, 84, 255);
+        color: white;
+        z-index: 40;
+    }
+
+    .nav-mobile.open {
+        display: block;
+        animation: slide-down 0.3s ease-out;
+    }
+
+    .nav-mobile.closing {
+        animation: slide-up 0.3s ease-in;
+    }
+
+    .card-wrapper {
+        position: relative;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+
+    .card-wrapper::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        /* Jarak bayangan dari card */
+        width: 100%;
+        height: 15px;
+        /* Tinggi bayangan */
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        /* Bayangan hanya di bawah */
+        z-index: -1;
+        /* Bayangan di bawah card */
+        transition: all 0.3s ease;
+    }
+
+    .swiper-slide-active .card-wrapper::after {
+        bottom: -15px;
+        /* Bayangan lebih terlihat untuk slide aktif */
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+        /* Bayangan lebih besar */
+    }
+
+    .swiper-slide-next .card-wrapper::after,
+    .swiper-slide-prev .card-wrapper::after {
+        bottom: -10px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        /* Bayangan lebih kecil */
+    }
+
+    /* Pagination Button */
+    .swiper-button-prev,
+    .swiper-button-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        color: rgb(25, 135, 84);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+
+    /* untuk yang inactive  */
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        background: gray;
+        border-radius: 50%;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 24px;
+        height: 16px;
+        border-radius: 5px;
+        background-color: rgb(25, 135, 84);
+        opacity: 1;
+    }
+</style>
+
+<body class="font-poppins bg-white text-black">
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-primary z-50">
+        <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
+            <!-- Logo UPN -->
+            <a href="Landing_Page.html">
+                <img src="assets/img/index/logo.png" class="w-20 h-20 my-4" alt="Logo">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="home.html" class="text-white font-medium">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
+                <a href="AboutUs.html" class="text-white font-medium">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium">Contact Us</a>
+            </div>
+
+            <!-- Ikon menu untuk mobile -->
+            <div id="nav-toggle" class="md:hidden text-white text-5xl cursor-pointer">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <!-- Navbar untuk mobile -->
+        <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
+            <a href="home.html" class="block py-2 px-4">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4">Fakultas</a>
+            <a href="AboutUs.html" class="block py-2 px-4">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="mt-36">
+        <!-- Tentang UPN -->
+        <div class="flex flex-wrap items-start px-8 md:px-8 sm:px-8">
+            <!-- Teks -->
+            <div class="w-full md:w-1/2 mb-8 md:mb-0">
+                <h1 class="mb-2 text-4xl font-bold">Tentang UPN</h1>
+                <div class="flex mb-4">
+                    <div class="h-1 w-16 bg-primary my-2 mr-2"></div>
+                    <div class="h-1 w-14 bg-primary my-2"></div>
+                </div>
+
+                <p class="text-justify text-lg font-semibold">
+                    <strong>Universitas Pembangunan Nasional "Veteran" Yogyakarta</strong> atau biasa disingkat
+                    <strong>UPNYK</strong>, merupakan salah
+                    satu Perguruan Tinggi Negeri (PTN) di Indonesia yang berlokasi di Daerah Istimewa Yogyakarta. Pada
+                    saat
+                    didirikan, UPN "Veteran" Yogyakarta hanya memiliki 3 jurusan. Kini UPN "Veteran" Yogyakarta memiliki
+                    5 fakultas yang terdiri dari 1 program studi untuk D-3, 21 program studi untuk S-1, 8 program studi
+                    untuk
+                    S-2, serta 1 program studi untuk S-3. Melalui deretan program studi tersebut, UPNYK berkomitmen
+                    untuk
+                    mewujudkan pendidikan berkualitas dalam ilmu pengetahuan, teknologi, dan bisnis. Dengan fokus pada
+                    inovasi,
+                    penelitian, dan pengabdian masyarakat, UPNYK mendorong pengembangan potensi individu, serta
+                    memberikan
+                    kontribusi positif bagi kemajuan Indonesia melalui semangat bela negara.
+                </p>
+            </div>
+
+            <!-- Video YouTube -->
+            <div class="w-full md:w-1/2 flex justify-center items-center relative">
+                <a href="javascript:void(0);" onclick="openModal()" class="inline-block relative">
+                    <img src="./assets/img/home/UPN.png" alt="Video Thumbnail"
+                        class="w-full max-w-lg h-auto rounded-lg shadow-lg object-cover">
+                    <div class="w-full h-full absolute inset-0 flex justify-center items-center">
+                        <i
+                            class="bx bx-play-circle text-6xl text-black hover:text-green-500 transition-transform duration-300 transform"></i>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Modal -->
+            <div id="videoModal"
+                class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+                <div class="relative">
+                    <iframe id="videoFrame" width="560" height="315" src="" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        class="rounded-lg shadow-lg"></iframe>
+                    <!-- Close Button -->
+                    <button onclick="closeModal()"
+                        class="absolute top-0 right-0 text-white text-2xl p-2">&times;</button>
+                </div>
+            </div>
+            <div id="Sejarah"></div>
+        </div>
+        <!-- Sejarah UPN -->
+        <div class="flex items-start py-8 px-8 md:px-8 sm:px-8">
+            <!-- Teks -->
+            <div class="w-full">
+                <h1 class="mb-4 text-4xl font-bold">Sejarah UPN</h1>
+                <div class="flex mb-4">
+                    <div class="h-1 w-16 bg-primary my-2 mr-2"></div>
+                    <div class="h-1 w-14 bg-primary my-2"></div>
+                </div>
+                <p class="text-justify text-lg font-semibold" id="intro-text">
+                    Universitas Pembangunan Nasional (UPN) "Veteran" semula adalah suatu lembaga pendidikan tinggi yang
+                    didirikan atas prakarsa para pejuang kemerdekaan R.I dengan nama Akademi Pembangunan Nasional (APN)
+                    "Veteran" yang didirikan di kota Yogyakarta, berdasarkan Surat Keputusan Menteri Urusan Veteran
+                    nomor:139/Kpts/1965, tanggal 2 Oktober 1958.
+                </p>
+
+                <!-- teks yang hanya terlihat saat diekspansi -->
+                <div class="opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-in-out" id="more-text"
+                    id="more-text" id="more-text">
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Dalam rangka peningkatan APN "Veteran" berdasarkan Surat Keputusan Menteri Urusan Veteran dan
+                        Demobilisasi nomor: 140/Kpts/1965, tanggal 30 Juli 1965, APN "Veteran" berubah namanya menjadi
+                        Perguruan Tinggi Pembangunan Nasional (PTPN) "Veteran".
+                    </p>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Pada tahun 1965 atas usul beberapa anggota Veteran yang berdomisili di luar Yogyakarta terjadi
+                        pengintegrasian dari beberapa Perguruan Tinggi, yaitu Universitas Veteran Nasional Surakarta
+                        menjadi
+                        PTPN "Veteran" cabang Surakarta, akademi Perusahaan Veteran Surabaya menjadi PTPN "Veteran"
+                        cabang
+                        Surabaya. Kemudian pada tahun 1967 menyusul Akademi Tekstil, Akademi Bank dan Akademi
+                        Tatalaksana
+                        Pelayaran Niaga "Jos Soedarso" yang bernaung di bawah Lembaga Pendidikan Kader Pembangunan
+                        (LPKP)
+                        yaitu suatu lembaga pendidikan yang diusahakan dan diasuh oleh para anggota Veteran di Jakarta,
+                        menjadi PTPN "Veteran" cabang Jakarta, dengan Surat Keputusan Menteri Urusan Veteran dan
+                        Demobilisasi nomor: 09/Kpts/Menvet/1967 tanggal 21 Februari 1967. Dengan demikian PTPN "Veteran"
+                        tersebar di empat kota besar yaitu Yogyakarta sebagai pusatnya, sedangkan Surakarta, Surabaya
+                        dan
+                        Jakarta merupakan cabang-cabangnya.
+                    </p>
+                    <!-- Tambahan teks -->
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Dalam perkembangan selanjutnya PTPN "Veteran" Surakarta yang hanya terdiri dari 2 (dua) Fakultas
+                        yaitu Fakultas Geografi dan Fakultas Kedokteran, berdasarkan Surat Keputusan Menhankam/Pangab
+                        nomor:
+                        Skep/B/503/V/1973 tanggal 22 Mei 1973, Fakultas Geografi dihapuskan, sehingga PTPN "Veteran"
+                        cabang
+                        Surakarta tinggal 1 (satu) fakultas, yaitu Fakultas Kedokteran, inipun akhirnya pada tahun 1975
+                        bergabung dengan Universitas Negeri Sebelas Maret (UNS) Surakarta.
+                    </p>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        LPKP yang semula menaungi ketiga Akademi yaitu Akademi Tekstil, Bank dan Tatalaksana Pelayaran
+                        Niaga
+                        "Jos Soedarso" di Jakarta, adalah suatu Lembaga yang berbadan Yayasan yang didirikan oleh
+                        anggota-anggota Veteran Pejuang Kemerdekaan, dengan tujuan:
+                    </p>
+                    <ul class="list-inside list-decimal pl-6 text-justify text-lg font-semibold py-2 ">
+                        <li>Untuk memberikan kesempatan seluas-luasnya kepada para Veteran Pejuang Kemerdekaan,
+                            alat-alat
+                            negara bebas tugas/pensiun dan tenaga-tenaga muda lainnya untuk memperdalam pengetahuan
+                            dalam
+                            rangka pembangunan masyarakat Indonesia.</li>
+                        <li>Mempersiapkan tenaga-tenaga ahli kader pembangunan yang berjiwa patriotik, sejiwa dengan
+                            makna
+                            pola pembangunan semesta, menuju masyarakat Indonesia yang sentosa adil dan makmur.</li>
+                    </ul>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Dengan dihapuskannya Departemen Transmigrasi, Veteran dan Demobilisasi, yang semula adalah
+                        Departemen Urusan Veteran dan Demobilisasi, pengelolaan PTPN "Veteran" selanjutnya bernaung di
+                        bawah
+                        Departemen Pertahanan Keamanan/ABRI.
+                    </p>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Dalam rangka pengembangan PTPN "Veteran", melalui Surat Keputusan Menhankam/Pangab nomor:
+                        Skep/1555/XI/1977 tanggal 5 November 1977, PTPN "Veteran" berubah namanya menjadi Universitas
+                        Pembangunan Nasional "Veteran".
+                    </p>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Berdasarkan Surat Keputusan bersama (SKB) antara Menteri Pendidikan dan Kebudayaan dan Menteri
+                        Pertahanan Keamanan nomor:0307/0/1994, Kep/10/XI/1994 tanggal 29 November 1994, UPN "Veteran"
+                        terhitung mulai tanggal 1 April 1995, mengalami perubahan dari status Kedinasan menjadi
+                        Perguruan
+                        Tinggi Swasta (PTS). Dengan perubahan tersebut UPN "Veteran" yang semula pembinaannya bernaung
+                        di
+                        bawah Departemen Hankam, beralih tanggung jawab pembinaannya ke Yayasan Kejuangan Panglima Besar
+                        Sudirman (YKPBS) sesuai dengan Surat Keputusan Menhankam nomor: Kep/03/II/1993 tanggal 27
+                        Februari
+                        1993.
+                    </p>
+                    <p class="text-justify text-lg font-semibold py-2 ">
+                        Pada 6 Oktober 2014 Universitas Pembangunan Nasional 'Veteran' Yogyakarta kembali menjadi
+                        Perguruan
+                        Tinggi Negeri (PTN) di bawah Kementerian Pendidikan dan Kebudayaan, yang diresmikan oleh
+                        Presiden
+                        Republik Indonesia ke-6, Bapak Prof Dr Susilo Bambang Yudhoyono di Surabaya.
+                    </p>
+
+                </div>
+
+                <!-- Tombol "Baca Selengkapnya" -->
+                <button id="toggle-button"
+                    class="flex items-center mt-4 text-black text-xl font-bold hover:text-gray-500 focus:outline-none">
+                    Baca Selengkapnya
+                    <i class="bx bx-right-arrow-alt ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Menu -->
+        <div class="mx-auto bg-menuCarousel mt-4 shadow-xl">
+            <!-- <h1 class="text-center font-bold text-4xl py-8">Menu Pilihan</h1> -->
+            <section id="card" class="relative h-auto py-4 shadow-xl">
+                <div class="swiper card-slider">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide relative">
+                            <div class="card-wrapper relative">
+                                <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
+                                <div class="absolute inset-0  flex justify-center items-center">
+                                    <h2 class="text-white text-center text-3xl font-semibold">Fakultas</h2>
+                                </div>
+                                <a href="Fakultas.html" class="absolute inset-0"></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide relative">
+                            <div class="card-wrapper relative">
+                                <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
+                                <div class="absolute inset-0  flex justify-center items-center">
+                                    <h2 class="text-white text-center text-3xl font-semibold">Gedung Rektorat</h2>
+                                </div>
+                                <a href="Rektorat.html" class="absolute inset-0"></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide relative">
+                            <div class="card-wrapper relative">
+                                <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
+                                <div class="absolute inset-0  flex justify-center items-center">
+                                    <h2 class="text-white text-center text-3xl font-semibold">Fasilitas</h2>
+                                </div>
+                                <a href="Fasilitas.html" class="absolute inset-0"></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Slide 4 -->
+                        <div class="swiper-slide relative">
+                            <div class="card-wrapper relative">
+                                <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
+                                <div class="absolute inset-0  flex justify-center items-center">
+                                    <h2 class="text-white text-center text-3xl font-semibold">Beasiswa</h2>
+                                </div>
+                                <a href="Beasiswa.html" class="absolute inset-0"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev text-white">
+                    </div>
+                    <div class="swiper-button-next text-white">
+
+                    </div>
+                    <div class="swiper-pagination "></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- VR LINK  -->
+        <div class="">
+            <div class="relative w-full h-96">
+                <video class="w-full h-96 object-cover" autoplay loop muted>
+                    <source src="./assets/video/vprt.webm" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-vr flex items-center justify-center">
+                    <div>
+                        <img src="./assets/img/home/360sphere.png" alt="" class="w-40 h-auto mx-auto">
+                        <h1 class="my-2 text-white text-center text-2xl font-bold">Virtual Tour</h1>
+                        <h2 class="my-4 text-white text-center text-2xl font-semibold">
+                            Jelajahi lokasi dan fasilitas kampus UPN Veteran Yogyakarta
+                        </h2>
+                        <div class="flex justify-center">
+                            <a href="Home.html"
+                                class="inline-block px-6 py-3 text-white bg-green-500 hover:bg-green-600 font-semibold rounded-lg transition duration-300">
+                                Tekan di sini
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Kampus
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="Home.html" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
+                    <li><a href="Fasilitas.html" class="hover:text-gray-300">Fasilitas</a></li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Gedung Rektorat</a></li>
+                    <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Tentang Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="AboutUs.html" class="hover:text-gray-300">Tim Kami</a></li>
+                    <li><a href="ContactMe.html" class="hover:text-gray-300">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Ikuti Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8">
+            <p>&copy;Copyright 2024 <a href="https://github.com/HUTAOCHAN99"
+                    class="hover:text-gray-500">HUTAOCHAN99</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+<script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    let isAnimating = false;
+
+    navToggle.addEventListener('click', () => {
+        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (mobileNav.classList.contains('open')) {
+            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
+            isAnimating = true;
+            mobileNav.classList.remove('open');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.classList.remove('closing');
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-up
+        } else {
+            // Jika navbar tertutup, buka dengan animasi slide-down
+            isAnimating = true;
+            mobileNav.classList.add('open');
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-down
+        }
+    });
+
+    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileNav.classList.remove('open');
+            mobileNav.classList.remove('closing');
+        }
+    });
+    //  CAROUSEL 3D
+    var CardSlider = new Swiper('.card-slider', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true, // Menjaga slide tengah tetap di tengah
+        loop: true,
+        slidesPerView: 3, // Menampilkan 3 slide dalam satu waktu
+        spaceBetween: 10, // Menambahkan jarak antar slide
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 2.5,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        on: {
+            slideChange: function () {
+                const slides = document.querySelectorAll('.swiper-slide');
+                slides.forEach((slide, index) => {
+                    if (index === this.activeIndex || index === this.activeIndex + 1 || index === this.activeIndex - 1) {
+                        slide.style.zIndex = '1'; // Slide tengah dan slide kiri/kanan mendapat lapisan depan
+                    } else {
+                        slide.style.zIndex = '0'; // Slide lain berada di belakang
+                    }
+                });
+            },
+        }
+    });
+
+    // modal yt
+    function openModal() {
+        if (window.innerWidth >= 768) {
+            const modal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+            // Set the video URL to the iframe
+            videoFrame.src = "https://www.youtube.com/embed/TyfwC6AJKac?autoplay=1";
+            modal.classList.remove('hidden');
+        } else {
+            // Redirect to YouTube video in a new tab for mobile devices
+            window.open("https://www.youtube.com/watch?v=TyfwC6AJKac", "_blank");
+        }
+    }
+
+
+
+    function closeModal() {
+        const modal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+        // Remove the video URL to stop it from playing
+        videoFrame.src = "";
+        modal.classList.add('hidden');
+    }
+
+    // Ekspansi Sejarah
+    const toggleButton = document.getElementById('toggle-button');
+    const moreText = document.getElementById('more-text');
+    const sejarahSection = document.getElementById('Sejarah');
+
+    toggleButton.addEventListener('click', () => {
+        const isHidden = moreText.classList.contains('opacity-0');
+
+        if (isHidden) {
+            moreText.classList.remove('opacity-0', 'max-h-0');
+            moreText.classList.add('opacity-100', 'max-h-[1000px]');
+            toggleButton.textContent = 'Lebih Sedikit';
+        } else {
+            moreText.classList.add('opacity-0', 'max-h-0');
+            moreText.classList.remove('opacity-100', 'max-h-[1000px]');
+            toggleButton.textContent = 'Baca Selengkapnya';
+            sejarahSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+</script>
+
+</html>

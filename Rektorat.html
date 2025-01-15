@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEDUNG REKTORAT UPNYK</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<style>
+    /* Typing Nama_Fakultas */
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: visible;
+        border-right: 0.15em solid white;
+        white-space: nowrap;
+        line-height: 1.5;
+    }
+
+    .blink {
+        animation: blink 0.75s step-end infinite;
+    }
+
+    .bg-primary {
+        background-color: rgb(25, 135, 84);
+    }
+
+    /* Animasi floating */
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    .nav-mobile {
+        display: none;
+        /* Default disembunyikan */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(25, 135, 84, 255);
+        color: white;
+        z-index: 40;
+    }
+
+    .nav-mobile.open {
+        display: block;
+        animation: slide-down 0.3s ease-out;
+    }
+
+    .nav-mobile.closing {
+        animation: slide-up 0.3s ease-in;
+    }
+
+    .video-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Pastikan teks tetap di tengah */
+        overflow: hidden;
+        height: 100vh;
+    }
+
+
+    .video-container video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(11, 61, 38, 0.6);
+        z-index: 0;
+    }
+
+    .content-wrapper {
+        z-index: 1;
+        margin-top: 10%;
+    }
+
+    /* arrow  */
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @keyframes smooth-bounce {
+        0% {
+            transform: translateY(0);
+        }
+
+        20% {
+            transform: translateY(-5px);
+            /* Lebih sedikit naik */
+        }
+
+        40% {
+            transform: translateY(0);
+        }
+
+        60% {
+            transform: translateY(-2px);
+            /* Naik sedikit lagi */
+        }
+
+        80% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+
+    .scroll-arrow {
+        z-index: 1000;
+        position: absolute;
+        bottom: 0;
+        /* Tepat di dasar */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3rem;
+        color: white;
+        animation: smooth-bounce 1.5s ease-in-out infinite;
+        margin-bottom: 0;
+        /* Pastikan tidak ada margin tambahan */
+        padding: 10px;
+        /* Tambahan opsional untuk estetika */
+    }
+</style>
+
+<body>
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-primary z-50">
+        <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
+            <!-- Logo UPN -->
+            <a href="Landing_Page.html">
+                <img src="assets/img/index/logo.png" class="w-20 h-20 my-4" alt="Logo">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="home.html" class="text-white font-medium">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
+                <a href="AboutUs.html" class="text-white font-medium">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium">Contact Us</a>
+            </div>
+
+            <!-- Ikon menu untuk mobile -->
+            <div id="nav-toggle" class="md:hidden text-white text-5xl cursor-pointer">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <!-- Navbar untuk mobile -->
+        <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
+            <a href="home.html" class="block py-2 px-4">Home</a>
+            <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
+            <a href="AboutUs.html" class="block py-2 px-4">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4">Contact Us</a>
+        </div>
+    </header>
+    <!-- SEcTION UMTUK VIDEO BANNER PARALAX-->
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="assets\video\vprt.webm" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+        <div class="content-wrapper flex justify-center my-10">
+            <h1
+                class="text-white text-6xl font-bold tracking-widest text-center Nama_Fakultas typing-animation sm:text-4xl">
+            </h1>
+        </div>
+        <!-- Scroll Down Button -->
+        <a href="#content-1" class="scroll-arrow">
+            &#8595; <!-- Arrow Down Symbol -->
+        </a>
+    </div>
+
+
+
+    <!-- Parallax Section: Content -->
+    <div class="parallax content" id="content-1">
+        <div class="flex h-auto flex-col">
+            <div class="mt-32 w-full">
+                <div class="w-full text-center">
+                    <h1 class="mt-4 font-bold text-xl sm:text-2xl">Visi dan Misi Fakultas Ekonomi dan Bisnis</h1>
+                </div>
+                <div class="w-full h-auto flex flex-wrap">
+                    <!-- Bagian Visi -->
+                    <div class="w-full md:w-1/2 px-6 pt-6 border-b md:border-r md:border-b-0 border-gray-300">
+                        <h2 class="text-xl font-bold mb-4 text-center">Visi</h2>
+                        <p class="font-semibold text-justify">Mewujudkan fakultas yang berkontribusi untuk kemajuan
+                            pengetahuan bidang ekonomi dan bisnis melalui pembelajaran berkualitas yang diakui di
+                            tingkat global dengan dilandasi jiwa bela negara pada tahun 2030.</p>
+                    </div>
+                    <!-- Bagian Misi -->
+                    <div class="w-full md:w-1/2 px-6 pt-6">
+                        <h2 class="text-xl font-bold mb-4 text-center">Misi</h2>
+                        <ul class="list-disc font-semibold m-4 text-justify space-y-2">
+                            <li>Meningkatkan kualitas lulusan FEB yang berdaya saing global dilandasi jiwa bela negara
+                                melalui pelaksanaan merdeka belajar kampus merdeka dalam rangka penguatan relevansi,
+                                kuantitas dan kualitas pembelajaran.
+                            </li>
+                            <li>Menguatkan karakteristik Fakultas Ekonomi dan Bisnis sebagai Fakutas bela negara melalui
+                                peningkatan kuantitas dan kualitas internalisasi nilai-nilai bela negara dalam
+                                pelaksanaan Tridarma Perguruan Tinggi.</li>
+                            <li>Meningkatkan profesionalitas kinerja dosen, tenaga kependidikan dan mahasiswa yang
+                                berdaya saing global.</li>
+                            <li>Melakukan sinergitas kerja sama dengan pemangku kepentingan tingkat global</li>
+                            <li>Meningkatkan kualitas penelitian dan pengabdian kepada masyarakat yang berdaya saing
+                                global dengan sumber daya yang dimiliki.</li>
+                            <li>Meningkatkan kualitas kelembagaan melalui peningkatan kualitas pelaksanaan reformasi
+                                birokrasi sebagai Perguruan Tinggi Negeri - Badan Hukum (PTN-BH).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tujuan -->
+            <div class="w-full h-auto mt-8 px-8">
+                <h2 class="text-xl font-bold mb-4 text-center">Tujuan Fakultas Ekonomi dan Bisnis</h2>
+                <p class="font-semibold text-justify mb-4">Menunjang pembangunan nasional di bidang Ekonomi melalui
+                    reformasi dan revolusi pembelajaran berdasarkan teknologi, hybrid learning dan digitalisasi dalam
+                    rangka menciptakan sumber daya manusia yang unggul di era global dan dilandasi jiwa bela negara</p>
+            </div>
+
+            <!-- Table -->
+            <div class="overflow-x-auto justify-self-start my-4">
+                <div class="w-full text-center my-2">
+                    <h1 class="text-xl font-bold">Akreditasi Program Studi</h1>
+                </div>
+                <table class="table-auto w-3/5 border-collapse border border-gray-300 mx-auto mt-6">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Jurusan</th>
+                            <th class="border border-gray-300 px-4 py-2 text-left">Akreditasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">S-1 Manajemen</td>
+                            <td class="border border-gray-300 px-4 py-2">A</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">S-1 Akuntansi</td>
+                            <td class="border border-gray-300 px-4 py-2">A</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">S-1 Ilmu Ekonomi Pembangunan</td>
+                            <td class="border border-gray-300 px-4 py-2">A</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">S-2 Ilmu Ekonomi</td>
+                            <td class="border border-gray-300 px-4 py-2">B</td>
+                        </tr>
+                        <tr>
+                            <td class="border border-gray-300 px-4 py-2">S-2 Manajemen</td>
+                            <td class="border border-gray-300 px-4 py-2">B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <!-- FOOTER -->
+     <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Kampus
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="Home.html" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
+                    <li><a href="Fasilitas.html" class="hover:text-gray-300">Fasilitas</a></li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Gedung Rektorat</a></li>
+                    <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Tentang Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="AboutUs.html" class="hover:text-gray-300">Tim Kami</a></li>
+                    <li><a href="ContactMe.html" class="hover:text-gray-300">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Ikuti Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8">
+            <p>&copy;Copyright 2024 <a href="https://github.com/HUTAOCHAN99"
+                    class="hover:text-gray-500">HUTAOCHAN99</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const typingAnimation = document.querySelector('.typing-animation');
+        const text_1 = "GEDUNG REKTORAT";
+        const text_2 = "UPN VETERAN YOGYAKARTA";
+        let currentTextIndex = 0;
+        let isAnimating = false;
+
+        function updateFontSize() {
+            const width = window.innerWidth;
+            if (width >= 768) {
+                typingAnimation.style.fontSize = '2rem'; // md:text-2xl
+            } else if (width >= 640) {
+                typingAnimation.style.fontSize = '1.5rem'; // sm:text-xl
+            } else {
+                typingAnimation.style.fontSize = '1rem'; // Default size
+            }
+        }
+
+        function typeText() {
+            const text = currentTextIndex === 0 ? text_1 : text_2;
+            typingAnimation.textContent = '';
+
+            const typingSpeed = 150; // Kecepatan tetap per karakter (milidetik)
+            let charIndex = 0;
+
+            const typeInterval = setInterval(() => {
+                if (charIndex < text.length) {
+                    typingAnimation.textContent += text[charIndex];
+                    charIndex++;
+                } else {
+                    clearInterval(typeInterval);
+                    typingAnimation.classList.add('blink');
+
+                    setTimeout(() => {
+                        currentTextIndex = (currentTextIndex + 1) % 2;
+                        typingAnimation.classList.remove('blink');
+                        typeText();
+                    }, 2000);
+                }
+            }, typingSpeed);
+        }
+
+        updateFontSize(); // Set font size pertama kali
+        typeText(); // Mulai animasi mengetik
+
+        window.addEventListener('resize', updateFontSize); // Perbarui ukuran font saat jendela diubah ukurannya
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // Mulai animasi tanpa delay pada awal
+        typeText(); // langsung memulai typing tanpa delay
+    });
+
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    let isAnimating = false;
+    navToggle.addEventListener('click', () => {
+        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (mobileNav.classList.contains('open')) {
+            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
+            isAnimating = true;
+            mobileNav.classList.remove('open');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.classList.remove('closing');
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-up
+        } else {
+            // Jika navbar tertutup, buka dengan animasi slide-down
+            isAnimating = true;
+            mobileNav.classList.add('open');
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-down
+        }
+    });
+
+    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileNav.classList.remove('open');
+            mobileNav.classList.remove('closing');
+        }
+    });
+
+
+</script>
+
+</html>
