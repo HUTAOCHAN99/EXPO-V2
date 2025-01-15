@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 </head>
 <style>
     /* Typing Nama_Fakultas */
@@ -181,7 +183,6 @@
 
 <body>
     <!-- HEADER -->
-    <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-primary z-50">
         <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
             <!-- Logo UPN -->
@@ -232,92 +233,65 @@
 
 
     <!-- Parallax Section: Content -->
-    <div class="parallax content" id="content-1">
-        <div class="flex h-auto flex-col">
-            <div class="mt-32 w-full">
-                <div class="w-full text-center">
-                    <h1 class="mt-4 font-bold text-xl sm:text-2xl">Visi dan Misi Fakultas Ekonomi dan Bisnis</h1>
-                </div>
-                <div class="w-full h-auto flex flex-wrap">
-                    <!-- Bagian Visi -->
-                    <div class="w-full md:w-1/2 px-6 pt-6 border-b md:border-r md:border-b-0 border-gray-300">
-                        <h2 class="text-xl font-bold mb-4 text-center">Visi</h2>
-                        <p class="font-semibold text-justify">Mewujudkan fakultas yang berkontribusi untuk kemajuan
-                            pengetahuan bidang ekonomi dan bisnis melalui pembelajaran berkualitas yang diakui di
-                            tingkat global dengan dilandasi jiwa bela negara pada tahun 2030.</p>
-                    </div>
-                    <!-- Bagian Misi -->
-                    <div class="w-full md:w-1/2 px-6 pt-6">
-                        <h2 class="text-xl font-bold mb-4 text-center">Misi</h2>
-                        <ul class="list-disc font-semibold m-4 text-justify space-y-2">
-                            <li>Meningkatkan kualitas lulusan FEB yang berdaya saing global dilandasi jiwa bela negara
-                                melalui pelaksanaan merdeka belajar kampus merdeka dalam rangka penguatan relevansi,
-                                kuantitas dan kualitas pembelajaran.
-                            </li>
-                            <li>Menguatkan karakteristik Fakultas Ekonomi dan Bisnis sebagai Fakutas bela negara melalui
-                                peningkatan kuantitas dan kualitas internalisasi nilai-nilai bela negara dalam
-                                pelaksanaan Tridarma Perguruan Tinggi.</li>
-                            <li>Meningkatkan profesionalitas kinerja dosen, tenaga kependidikan dan mahasiswa yang
-                                berdaya saing global.</li>
-                            <li>Melakukan sinergitas kerja sama dengan pemangku kepentingan tingkat global</li>
-                            <li>Meningkatkan kualitas penelitian dan pengabdian kepada masyarakat yang berdaya saing
-                                global dengan sumber daya yang dimiliki.</li>
-                            <li>Meningkatkan kualitas kelembagaan melalui peningkatan kualitas pelaksanaan reformasi
-                                birokrasi sebagai Perguruan Tinggi Negeri - Badan Hukum (PTN-BH).</li>
-                        </ul>
-                    </div>
+    <div class="parallax content h-full w-full">
+        <!-- Tujuan -->
+        <div class="w-full h-auto mt-8 px-8" id="content-1">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Gedung Rektorat Panglima Besar Sudirman</h2>
+                <div class="text-gray-700">
+                    <p class="mb-2"><span class="font-semibold">Luas &nbsp;&nbsp;&nbsp;:</span> 10.000 meter persegi</p>
+                    <p><span class="font-semibold">Alamat:</span> UPN Veteran Yogyakarta, Jl. Ring Road Utara, Ngropoh,
+                        Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
                 </div>
             </div>
 
-            <!-- Tujuan -->
-            <div class="w-full h-auto mt-8 px-8">
-                <h2 class="text-xl font-bold mb-4 text-center">Tujuan Fakultas Ekonomi dan Bisnis</h2>
-                <p class="font-semibold text-justify mb-4">Menunjang pembangunan nasional di bidang Ekonomi melalui
-                    reformasi dan revolusi pembelajaran berdasarkan teknologi, hybrid learning dan digitalisasi dalam
-                    rangka menciptakan sumber daya manusia yang unggul di era global dan dilandasi jiwa bela negara</p>
+        </div>
+        <div x-data="{ activeSlide: 1 }" class="relative w-full overflow-hidden">
+            <!-- Slides Container -->
+            <div class="flex transition-transform duration-500"
+                :style="'transform: translateX(-' + (activeSlide - 1) * 100 + '%)'">
+                <!-- Slide 1 -->
+                <div class="min-w-full bg-blue-200 h-64 flex items-center justify-center">
+                    Lantai 1: Ruang kerja pimpinan, ruang rapat, ruang tamu
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full bg-green-200 h-64 flex items-center justify-center">
+                    Lantai 2: Ruang kerja staf, tenaga kependidikan, ruang rapat fakultas
+                </div>
+                <!-- Slide 3 -->
+                <div class="min-w-full bg-yellow-200 h-64 flex items-center justify-center">
+                    Lantai 3: Ruang kerja staf, tenaga kependidikan, ruang rapat universitas
+                </div>
+                <!-- Slide 4 -->
+                <div class="min-w-full bg-purple-200 h-64 flex items-center justify-center">
+                    Lantai 4: Ruang kerja staf, tenaga kependidikan, ruang rapat
+                </div>
+                <!-- Slide 5 -->
+                <div class="min-w-full bg-pink-200 h-64 flex items-center justify-center">
+                    Lantai 5: Ruang kerja staf, tenaga kependidikan, ruang rapat
+                </div>
+                <!-- Slide 6 -->
+                <div class="min-w-full bg-red-200 h-64 flex items-center justify-center">
+                    Lantai 6: Ruang serbaguna, auditorium, perpustakaan
+                </div>
             </div>
 
-            <!-- Table -->
-            <div class="overflow-x-auto justify-self-start my-4">
-                <div class="w-full text-center my-2">
-                    <h1 class="text-xl font-bold">Akreditasi Program Studi</h1>
-                </div>
-                <table class="table-auto w-3/5 border-collapse border border-gray-300 mx-auto mt-6">
-                    <thead class="bg-primary">
-                        <tr>
-                            <th class="border border-gray-300 px-4 py-2 text-left">Jurusan</th>
-                            <th class="border border-gray-300 px-4 py-2 text-left">Akreditasi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">S-1 Manajemen</td>
-                            <td class="border border-gray-300 px-4 py-2">A</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">S-1 Akuntansi</td>
-                            <td class="border border-gray-300 px-4 py-2">A</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">S-1 Ilmu Ekonomi Pembangunan</td>
-                            <td class="border border-gray-300 px-4 py-2">A</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">S-2 Ilmu Ekonomi</td>
-                            <td class="border border-gray-300 px-4 py-2">B</td>
-                        </tr>
-                        <tr>
-                            <td class="border border-gray-300 px-4 py-2">S-2 Manajemen</td>
-                            <td class="border border-gray-300 px-4 py-2">B</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Navigation Buttons -->
+            <div class="absolute top-1/2 transform -translate-y-1/2 left-0">
+                <button @click="activeSlide = activeSlide === 1 ? 6 : activeSlide - 1"
+                    class="p-2 bg-gray-600 text-white rounded-l">Prev</button>
+            </div>
+            <div class="absolute top-1/2 transform -translate-y-1/2 right-0">
+                <button @click="activeSlide = activeSlide === 6 ? 1 : activeSlide + 1"
+                    class="p-2 bg-gray-600 text-white rounded-r">Next</button>
             </div>
         </div>
+
     </div>
 
-     <!-- FOOTER -->
-     <footer class="bg-gray-800 text-white py-12">
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto flex flex-wrap justify-between">
             <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
                 <h4 class="text-lg font-semibold relative mb-6">
@@ -364,8 +338,8 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const typingAnimation = document.querySelector('.typing-animation');
-        const text_1 = "GEDUNG REKTORAT";
-        const text_2 = "UPN VETERAN YOGYAKARTA";
+        const text_1 = "GEDUNG REKTORAT ";
+        const text_2 = "PANGLIMA BESAR SUDIRMAN";
         let currentTextIndex = 0;
         let isAnimating = false;
 
