@@ -18,6 +18,9 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <style>
+    html{
+        scroll-behavior: smooth;
+    }
     /* Coba pilih font */
     .font-sans {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -176,11 +179,12 @@
             </a>
 
             <!-- Menu Navigasi -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="Home.html" class="text-white font-medium">Home</a>
-                <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
-                <a href="AboutUs.html" class="text-white font-medium">About Us</a>
-                <a href="ContactMe.html" class="text-white font-medium">Contact Us</a>
+            <div class="hidden md:flex items-center space-x-8 hover:text-gray-300">
+                <a href="Home.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium hover:text-gray-300">Fakultas</a>
+                <a href="Jalur_Masuk.html" class="text-white font-medium hover:text-gray-300">Jalur Masuk</a>
+                <a href="AboutUs.html" class="text-white font-medium hover:text-gray-300">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium hover:text-gray-300">Contact Us</a>
             </div>
 
             <!-- Ikon menu untuk mobile -->
@@ -191,17 +195,18 @@
 
         <!-- Navbar untuk mobile -->
         <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
-            <a href="Home.html" class="block py-2 px-4">Home</a>
-            <a href="Fakultas.html" class="block py-2 px-4">Fakultas</a>
-            <a href="AboutUs.html" class="block py-2 px-4">About Us</a>
-            <a href="ContactMe.html" class="block py-2 px-4">Contact Us</a>
+            <a href="Home.html" class="block py-2 px-4 hover:text-gray-300">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4 hover:text-gray-300">Fakultas</a>
+            <a href="Jalur_Masuk.html" class="block py-2 px-4 hover:text-gray-300">Jalur Masuk</a>
+            <a href="AboutUs.html" class="block py-2 px-4 hover:text-gray-300">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4 hover:text-gray-300">Contact Us</a>
         </div>
     </header>
 
     <!-- MAIN -->
     <main class="mt-36">
         <!-- Tentang UPN -->
-        <div class="flex flex-wrap items-start px-8 md:px-8 sm:px-8">
+        <div class="flex flex-wrap items-start px-8 md:px-8 sm:px-8" id="Tentang">
             <!-- Teks -->
             <div class="w-full md:w-1/2 mb-8 md:mb-0">
                 <h1 class="mb-2 text-4xl font-bold">Tentang UPN</h1>
@@ -387,7 +392,7 @@
                             <div class="card-wrapper relative">
                                 <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
                                 <div class="absolute inset-0  flex justify-center items-center">
-                                    <h2 class="text-white text-center text-3xl font-semibold">Gedung Rektorat</h2>
+                                    <h2 class="text-white text-center text-3xl font-semibold">Rektorat</h2>
                                 </div>
                                 <a href="Rektorat.html" class="absolute inset-0"></a>
                             </div>
@@ -399,9 +404,9 @@
                             <div class="card-wrapper relative">
                                 <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
                                 <div class="absolute inset-0  flex justify-center items-center">
-                                    <h2 class="text-white text-center text-3xl font-semibold">Fasilitas</h2>
+                                    <h2 class="text-white text-center text-3xl font-semibold">Jalur Masuk</h2>
                                 </div>
-                                <a href="Fasilitas.html" class="absolute inset-0"></a>
+                                <a href="Jalur_Masuk.html" class="absolute inset-0"></a>
                             </div>
                         </div>
 
@@ -462,10 +467,10 @@
                     <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
                 </h4>
                 <ul class="space-y-2">
-                    <li><a href="Home.html" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="#Tentang" class="hover:text-gray-300">Tentang</a></li>
                     <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
-                    <li><a href="PassingGrade.html" class="hover:text-gray-300">Passing grade</a></li>
-                    <li><a href="Rektorat.html" class="hover:text-gray-300">Gedung Rektorat</a></li>
+                    <li><a href="Jalur_Masuk.html" class="hover:text-gray-300">Jalur Masuk</a></li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Rektorat</a></li>
                     <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
                 </ul>
             </div>
@@ -494,7 +499,7 @@
         </div>
         <div class="text-center text-sm mt-8">
             <p>&copy;Copyright 2024 <a href="https://github.com/HUTAOCHAN99"
-                    class="hover:text-gray-500">HUTAOCHAN99</a>. All Rights Reserved.</p>
+                    class="hover:text-gray-500" target="_blank">HUTAOCHAN99</a>. All Rights Reserved.</p>
         </div>
     </footer>
 
