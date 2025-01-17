@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<style>
+    /* Typing Nama_Fakultas */
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+
+    .bg-primary {
+        background-color: rgb(25, 135, 84);
+    }
+
+    .typing-animation {
+        display: inline-block;
+        overflow: visible;
+        border-right: 0.15em solid white;
+        white-space: nowrap;
+        line-height: 1.5;
+    }
+
+    .blink {
+        animation: blink 0.75s step-end infinite;
+    }
+
+    .bg-primary {
+        background-color: rgb(25, 135, 84);
+    }
+
+    /* Animasi floating */
+    @keyframes slide-down {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        to {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    }
+
+    .nav-mobile {
+        display: none;
+        /* Default disembunyikan */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(25, 135, 84, 255);
+        color: white;
+        z-index: 40;
+    }
+
+    .nav-mobile.open {
+        display: block;
+        animation: slide-down 0.3s ease-out;
+    }
+
+    .nav-mobile.closing {
+        animation: slide-up 0.3s ease-in;
+    }
+
+
+    /* arrow  */
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    @keyframes smooth-bounce {
+        0% {
+            transform: translateY(0);
+        }
+
+        20% {
+            transform: translateY(-5px);
+            /* Lebih sedikit naik */
+        }
+
+        40% {
+            transform: translateY(0);
+        }
+
+        60% {
+            transform: translateY(-2px);
+            /* Naik sedikit lagi */
+        }
+
+        80% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<body>
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-primary z-50">
+        <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
+            <!-- Logo UPN -->
+            <a href="Landing_Page.html">
+                <img src="assets/img/index/logo.png" class="w-20 h-20 my-4" alt="Logo">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-8 hover:text-gray-300">
+                <a href="Home.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium hover:text-gray-300">Fakultas</a>
+                <a href="https://pmb.upnyk.ac.id/" class="text-white font-medium hover:text-gray-300">Penerimaan
+                    Mahasiswa Baru</a>
+                <a href="Beasiswa.html" class="text-white font-medium hover:text-gray-300">Beasiswa</a>
+                <a href="AboutUs.html" class="text-white font-medium hover:text-gray-300">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium hover:text-gray-300">Contact Us</a>
+            </div>
+
+            <!-- Ikon menu untuk mobile -->
+            <div id="nav-toggle" class="md:hidden text-white text-5xl cursor-pointer">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <!-- Navbar untuk mobile -->
+        <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
+            <a href="Home.html" class="block py-2 px-4 hover:text-gray-300">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4 hover:text-gray-300">Fakultas</a>
+            <a href="https://pmb.upnyk.ac.id/" class="block py-2 px-4 hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+            <a href="Beasiswa.html" class="block py-2 px-4 hover:text-gray-300">Beasiswa</a>
+            <a href="AboutUs.html" class="block py-2 px-4 hover:text-gray-300">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4 hover:text-gray-300">Contact Us</a>
+        </div>
+    </header>
+
+
+    <!-- Parallax Section: Content -->
+    <div class="content mt-32 flex justify-center items-center h-screen" id="content-1">
+        <div class="bg-white shadow-lg rounded-lg p-8 md:p-12 max-w-lg text-center relative">
+            <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Hello,guys👋</h1>
+            <div class="quote">
+                <em>“Jika seseorang di antara kalian meminta nasihat kepada saudaranya, maka hendaklah ia menasihatinya”</em>
+                <br>
+                <strong>Syekh Abu Bakar Jabir Al-Jaza’iri dalam kitab Minhajul Muslim</strong>
+            </div>
+            <p class="text-gray-800">Jadi, kalau kalian ada saran atau kritik boleh dong kirim sini😁</p>
+            <div class="text-left space-y-4 mt-4">
+                <div>
+                    <h2 class="text-gray-800 font-semibold">Alamat</h2>
+                    <p class="text-gray-600">Yapah, RT.06/RW.02, Karanglo, Sukoharjo, Kec. Ngaglik, Kabupaten
+                        Sleman, Daerah Istimewa Yogyakarta 55581</p>
+                </div>
+                <div>
+                    <h2 class="text-gray-800 font-semibold">PHONE</h2>
+                    <p class="text-gray-600">+62 85656305716</p>
+                </div>
+                <div>
+                    <h2 class="text-gray-800 font-semibold">E-MAIL</h2>
+                    <p class="text-gray-700 mb-4">
+                        <span id="email" class="font-semibold text-blue-600">ahmadzhofir1808@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+            <a href="mailto:hello@letstalk.com"
+                class="mt-6 inline-block px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
+                Send an Email
+            </a>
+            <button onclick="copyEmail()"
+                class="mt-6 px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
+                Copy E-mail address
+            </button>
+            <p id="copy-message" class="mt-3 text-green-500 hidden">Email copied!</p>
+            <div
+                class="absolute top-0 right-0 w-40 h-40 bg-blue-200 rounded-full opacity-50 transform translate-x-12 -translate-y-12">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Kampus
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="#Tentang" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
+                    <li><a href="https://pmb.upnyk.ac.id/" class="hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+                    </li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Rektorat</a></li>
+                    <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Tentang Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="AboutUs.html" class="hover:text-gray-300">Tim Kami</a></li>
+                    <li><a href="ContactMe.html" class="hover:text-gray-300">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Ikuti Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8">
+            <p>&copy;Copyright 2024 <a href="https://github.com/HUTAOCHAN99"
+                    class="hover:text-gray-500">HUTAOCHAN99</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    let isAnimating = false;
+    navToggle.addEventListener('click', () => {
+        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (mobileNav.classList.contains('open')) {
+            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
+            isAnimating = true;
+            mobileNav.classList.remove('open');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.classList.remove('closing');
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-up
+        } else {
+            // Jika navbar tertutup, buka dengan animasi slide-down
+            isAnimating = true;
+            mobileNav.classList.add('open');
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300); // Durasi animasi slide-down
+        }
+    });
+
+    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileNav.classList.remove('open');
+            mobileNav.classList.remove('closing');
+        }
+    });
+
+    // untuk copy
+    function copyEmail() {
+        // Ambil email dari elemen dengan ID "email"
+        const email = document.getElementById('email').textContent;
+
+        // Gunakan Clipboard API untuk menyalin teks
+        navigator.clipboard.writeText(email)
+            .then(() => {
+                // Tampilkan pesan sukses
+                const message = document.getElementById('copy-message');
+                message.classList.remove('hidden');
+                setTimeout(() => message.classList.add('hidden'), 2000);
+            })
+            .catch(err => {
+                console.error('Failed to copy email: ', err);
+            });
+    }
+
+
+</script>
+
+</html>

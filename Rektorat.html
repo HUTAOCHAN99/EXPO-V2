@@ -15,10 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- SWIPER -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-    <!-- Scripts -->
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
 
 </head>
 <style>
@@ -190,11 +187,13 @@
             </a>
 
             <!-- Menu Navigasi -->
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="Home.html" class="text-white font-medium">Home</a>
-                <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
-                <a href="AboutUs.html" class="text-white font-medium">About Us</a>
-                <a href="ContactMe.html" class="text-white font-medium">Contact Us</a>
+            <div class="hidden md:flex items-center space-x-8 hover:text-gray-300">
+                <a href="Home.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium hover:text-gray-300">Fakultas</a>
+                <a href="https://pmb.upnyk.ac.id/" class="text-white font-medium hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+                <a href="Beasiswa.html" class="text-white font-medium hover:text-gray-300">Beasiswa</a>
+                <a href="AboutUs.html" class="text-white font-medium hover:text-gray-300">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium hover:text-gray-300">Contact Us</a>
             </div>
 
             <!-- Ikon menu untuk mobile -->
@@ -205,10 +204,12 @@
 
         <!-- Navbar untuk mobile -->
         <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
-            <a href="Home.html" class="block py-2 px-4">Home</a>
-            <a href="Fakultas.html" class="text-white font-medium">Fakultas</a>
-            <a href="AboutUs.html" class="block py-2 px-4">About Us</a>
-            <a href="ContactMe.html" class="block py-2 px-4">Contact Us</a>
+            <a href="Home.html" class="block py-2 px-4 hover:text-gray-300">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4 hover:text-gray-300">Fakultas</a>
+            <a href="https://pmb.upnyk.ac.id/" class="block py-2 px-4 hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+            <a href="Beasiswa.html" class="block py-2 px-4 hover:text-gray-300">Beasiswa</a>
+            <a href="AboutUs.html" class="block py-2 px-4 hover:text-gray-300">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4 hover:text-gray-300">Contact Us</a>
         </div>
     </header>
     <!-- SEcTION UMTUK VIDEO BANNER PARALAX-->
@@ -229,53 +230,75 @@
         </a>
     </div>
 
-    <!-- Parallax Section: Content -->
-    <div class="content h-full w-full">
-
-        <div class="w-full h-full mt-8 px-8" id="content-1">
-            <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-6">
-                <!-- Deskripsi -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-full md:w-1/2">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Gedung Rektorat Panglima Besar Sudirman</h2>
-                    <div class="text-gray-700">
-                        <p class="mb-2"><span class="font-semibold">Luas &nbsp;&nbsp;&nbsp;:</span> 10.000 meter persegi
-                        </p>
-                        <p><span class="font-semibold">Alamat:</span> UPN Veteran Yogyakarta, Jl. Ring Road Utara,
-                            Ngropoh,
-                            Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
-                            <div class="block h-80">
-
-                            </div>
-                    </div>
+    <div class="content w-full p-4" id="content-1">
+        <div class="flex flex-col md:flex-row items-start md:space-x-4">
+            <!-- Deskripsi -->
+            <div class="bg-gray-50 p-4 rounded-lg shadow w-full md:w-1/2">
+                <h2 class="text-2xl font-semibold text-gray-700 mb-2">Gedung Rektorat Panglima Besar Sudirman</h2>
+                <div class="text-md text-gray-600">
+                    <p class="mb-1"><span class="font-medium">Luas:</span> 10.000 meter persegi</p>
+                    <p><span class="font-medium">Alamat:</span> UPN Veteran Yogyakarta, Jl. Ring Road Utara, Ngropoh,
+                        Condongcatur, Kec. Depok, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281</p>
                 </div>
+            </div>
 
-                <!-- Carousel -->
-                <div class="carousel bg-blue-100 p-6 rounded-lg shadow-lg w-full md:w-1/2 relative overflow-hidden">
-                    <div class="relative">
+            <!-- Carousel -->
+            <div class="w-full md:w-1/2">
+                <div class="relative bg-gray-50 p-4 rounded-lg shadow">
+                    <div class="relative overflow-hidden h-72"> <!-- Tetapkan tinggi tetap -->
                         <div
-                            class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
                             <img src="./assets/img/UPN/Rektorat1.png" alt="Foto 1"
-                                class="w-full h-auto rounded-lg object-contain">
+                                class="w-full h-full object-cover rounded-lg">
                         </div>
                         <div
-                            class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
                             <img src="./assets/img/UPN/Rektorat2.jpg" alt="Foto 2"
-                                class="w-full h-auto rounded-lg object-contain">
+                                class="w-full h-full object-cover rounded-lg">
                         </div>
                         <div
-                            class="carousel-item absolute w-full h-full opacity-0 transition-opacity duration-1000 ease-in-out">
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
                             <img src="./assets/img/UPN/Rektorat3.jpg" alt="Foto 3"
-                                class="w-full h-auto rounded-lg object-contain">
+                                class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="./assets/img/UPN/Rektorat4.jpg" alt="Foto 4"
+                                class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="./assets/img/UPN/Rektorat5.jpg" alt="Foto 3"
+                                class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <div
+                            class="carousel-item opacity-0 absolute inset-0 transition-opacity duration-700 ease-in-out">
+                            <img src="./assets/img/UPN/Rektorat6.jpg" alt="Foto 3"
+                                class="w-full h-full object-cover rounded-lg">
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
+
+    <div class="bg-gray-50 my-4 rounded-lg shadow w-full h-auto flex flex-col md:flex-row items-center justify-between p-6">
+        <!-- Foto Profil -->
+        <div class="w-48 h-76 mb-6 md:mb-0">
+            <img src="./assets/img/UPN/BPKREKTOR.png" alt="Foto Profil" class="w-full h-full rounded-lg object-cover">
+        </div>
+    
+        <!-- Informasi Profil -->
+        <div class="text-center md:text-left">
+            <h2 class="text-5xl font-semibold text-gray-700">Prof. Mohamad Irhas Effendi, M.Si</h2>
+            <p class="text-3xl text-gray-600">Rektor UPN Veteran Yogyakarta</p>
+            <p class="text-4xl text-gray-600">Periode 2022 - 2026</p>
+        </div>
+    </div>
+    
+
     <!-- FOOTER -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-gray-800 text-white py-12 my-4">
         <div class="container mx-auto flex flex-wrap justify-between">
             <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
                 <h4 class="text-lg font-semibold relative mb-6">
@@ -283,10 +306,10 @@
                     <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
                 </h4>
                 <ul class="space-y-2">
-                    <li><a href="Home.html" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="#Tentang" class="hover:text-gray-300">Tentang</a></li>
                     <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
-                    <li><a href="PassingGrade.html" class="hover:text-gray-300">Passing grade</a></li>
-                    <li><a href="Rektorat.html" class="hover:text-gray-300">Gedung Rektorat</a></li>
+                    <li><a href="https://pmb.upnyk.ac.id/" class="hover:text-gray-300">Penerimaan Mahasiswa Baru</a></li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Rektorat</a></li>
                     <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
                 </ul>
             </div>
@@ -406,19 +429,26 @@
         }
     });
 
-    let currentIndex = 0;
-    const items = document.querySelectorAll('.carousel-item');
-    const totalItems = items.length;
+    document.addEventListener('DOMContentLoaded', () => {
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIndex = 0;
 
-    function showNextSlide() {
-        items[currentIndex].classList.remove('opacity-100');
-        items[currentIndex].classList.add('opacity-0');
-        currentIndex = (currentIndex + 1) % totalItems;
-        items[currentIndex].classList.remove('opacity-0');
-        items[currentIndex].classList.add('opacity-100');
-    }
+        function showItem(index) {
+            items.forEach((item, i) => {
+                item.style.opacity = i === index ? '1' : '0';
+                item.style.position = i === index ? 'relative' : 'absolute';
+            });
+        }
 
-    setInterval(showNextSlide, 3000); // Ubah slide setiap 3 detik
+        function nextItem() {
+            currentIndex = (currentIndex + 1) % items.length;
+            showItem(currentIndex);
+        }
+
+        showItem(currentIndex);
+        setInterval(nextItem, 3000);
+    });
+
 
 </script>
 
