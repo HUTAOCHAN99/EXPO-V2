@@ -31,6 +31,15 @@
         background-color: rgb(25, 135, 84);
     }
 
+    /* Warna untuk rotate */
+    .bg-front {
+        background-color: rgb(20, 108, 67);
+    }
+
+    .bg-back {
+        background-color: rgb(45, 162, 103);
+    }
+
     .bg-vr {
         background-color: rgba(25, 135, 84, 0.6);
     }
@@ -78,13 +87,73 @@
         }
     }
 
-    .glow {
-        animation: glow 1.5s infinite alternate;
+    @keyframes move {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(5px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
     }
 
+    .animate-move {
+        animation: move 1s ease-in-out infinite;
+    }
+
+    .glow {
+        animation: glow 2.5s infinite alternate;
+    }
+
+    .perspective {
+        perspective: 1000px;
+    }
+
+    .relative {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 2s ease-in-out;
+    }
+
+    .container-rotate:hover .relative {
+        transform: rotateY(180deg);
+    }
+
+    .backface-hidden {
+        backface-visibility: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .front {
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .back {
+        transform: rotateY(180deg);
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+    }
+
+    .container-rotate:hover .front {
+        opacity: 0;
+    }
+
+    .container-rotate:hover .back {
+        opacity: 1;
+    }
+
+    /* Nav style */
     .nav-mobile {
         display: none;
-        /* Default disembunyikan */
         position: absolute;
         top: 0;
         left: 0;
@@ -114,33 +183,25 @@
         position: absolute;
         left: 0;
         bottom: -10px;
-        /* Jarak bayangan dari card */
         width: 100%;
         height: 15px;
-        /* Tinggi bayangan */
         border-radius: 10px;
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        /* Bayangan hanya di bawah */
         z-index: -1;
-        /* Bayangan di bawah card */
         transition: all 0.3s ease;
     }
 
     .swiper-slide-active .card-wrapper::after {
         bottom: -15px;
-        /* Bayangan lebih terlihat untuk slide aktif */
         box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-        /* Bayangan lebih besar */
     }
 
     .swiper-slide-next .card-wrapper::after,
     .swiper-slide-prev .card-wrapper::after {
         bottom: -10px;
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        /* Bayangan lebih kecil */
     }
 
-    /* Pagination Button */
     .swiper-button-prev,
     .swiper-button-next {
         position: absolute;
@@ -165,7 +226,6 @@
         right: 10px;
     }
 
-    /* untuk yang inactive  */
     .swiper-pagination-bullet {
         width: 16px;
         height: 16px;
@@ -476,32 +536,28 @@
             </div>
         </div>
 
-        <div class="">
-            <div class="relative w-full h-full">
-                <div class="perspective">
-                    <div class="relative w-full h-48 transform transition-transform duration-700 hover:rotate-y-180">
-                        <!-- Front Side -->
-                        <div
-                            class="absolute inset-0 bg-yellow-400 text-gray-900 flex items-center justify-center backface-hidden">
-                            <h1 class="text-xl font-bold glow">
-                                <a href="#" class="hover:underline">Informasi Passing Grade</a>
+        <div class="container-rotate bg-primary">
+            <div class="perspective">
+                <div class="relative w-full h-48">
+                    <!-- Front Side -->
+                    <div class="front bg-front text-white flex items-center justify-center backface-hidden">
+                        <h1 class="text-2xl font-bold flex items-center justify-center space-x-2">
+                            <span class="animate-move text-green-500">&gt;&gt;&gt;</span>
+                            <span>Informasi Passing Grade</span>
+                            <span class="animate-move text-green-500">&lt;&lt;&lt;</span>
+                        </h1>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="back bg-back text-white flex items-center justify-center backface-hidden">
+                        <div class="p-4 text-center">
+                            <h1 class="text-2xl font-bold glow mb-4">
+                                <p href="#" class="">Lihat disini untuk informasi passing UPNVYK</p>
                             </h1>
+                            <a href="PassingGrade.html"
+                                class="bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300">
+                                Kunjungi
+                            </a>
                         </div>
-                        <!-- Back Side -->
-                        <div
-                            class="absolute inset-0 bg-blue-500 text-white flex items-center justify-center transform rotate-y-180 backface-hidden opacity-0 transition-opacity duration-700 hover:opacity-100">
-                            <div class="p-4 text-center">
-                                <h1 class="text-xl font-bold glow mb-4">
-                                    <a href="#" class="hover:underline">
-                                        Lihat disini untuk informasi passing UPNVYK
-                                    </a>
-                                </h1>
-                                <button class="bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300">
-                                    Kunjungi
-                                </button>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -528,12 +584,12 @@
             </div>
             <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
                 <h4 class="text-lg font-semibold relative mb-6">
-                    Tentang Kami
+                    Profile
                     <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
                 </h4>
                 <ul class="space-y-2">
-                    <li><a href="AboutUs.html" class="hover:text-gray-300">Tim Kami</a></li>
-                    <li><a href="ContactMe.html" class="hover:text-gray-300">Hubungi Kami</a></li>
+                    <li><a href="AboutUs.html" class="hover:text-gray-300">About Us</a></li>
+                    <li><a href="ContactMe.html" class="hover:text-gray-300">Contact Us</a></li>
                 </ul>
             </div>
             <div class="footer-col w-full md:w-1/4 px-4">
@@ -542,10 +598,10 @@
                     <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
                 </h4>
                 <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/ahmad.z.an.75457" class="hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/HUTAOCHAN99" class="hover:text-gray-300"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ahmad_zhofir_a_nayif/" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmad-zhofir-amanullah-nayif-56130a285/" class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -599,7 +655,7 @@
             videoFrame.src = "https://www.youtube.com/embed/RKTO6OWCX4w?si=R2ynwDjlmz4BG6oF";
             modal.classList.remove('hidden');
         } else {
-            // Redirect to YouTube video in a new tab for mobile devices
+            // redirect ke yt saat mobile version
             window.open("https://www.youtube.com/embed/RKTO6OWCX4w?si=R2ynwDjlmz4BG6oF", "_blank");
         }
     }
