@@ -43,7 +43,7 @@
         color: rgb(25, 135, 84);
     }
 
-    /* Animasi floating */
+    /* Animasi */
     @keyframes slide-down {
         from {
             transform: translateY(-100%);
@@ -66,6 +66,20 @@
             transform: translateY(-100%);
             opacity: 0;
         }
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.6);
+        }
+
+        100% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .glow {
+        animation: glow 1.5s infinite alternate;
     }
 
     .nav-mobile {
@@ -183,7 +197,8 @@
             <div class="hidden md:flex items-center space-x-8 hover:text-gray-300">
                 <a href="Home.html" class="text-white font-medium hover:text-gray-300">Home</a>
                 <a href="Fakultas.html" class="text-white font-medium hover:text-gray-300">Fakultas</a>
-                <a href="https://pmb.upnyk.ac.id/" class="text-white font-medium hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+                <a href="https://pmb.upnyk.ac.id/" class="text-white font-medium hover:text-gray-300">Penerimaan
+                    Mahasiswa Baru</a>
                 <a href="Beasiswa.html" class="text-white font-medium hover:text-gray-300">Beasiswa</a>
                 <a href="AboutUs.html" class="text-white font-medium hover:text-gray-300">About Us</a>
                 <a href="ContactMe.html" class="text-white font-medium hover:text-gray-300">Contact Us</a>
@@ -407,7 +422,8 @@
                             <div class="card-wrapper relative">
                                 <img src="assets/img/home/Fakultas.jpg" alt="card" class="w-full h-128 object-cover">
                                 <div class="absolute inset-0  flex justify-center items-center">
-                                    <h2 class="text-white text-center text-3xl font-semibold">Penerimaan Mahasiswa Baru</h2>
+                                    <h2 class="text-white text-center text-3xl font-semibold">Penerimaan Mahasiswa Baru
+                                    </h2>
                                 </div>
                                 <a href="https://pmb.upnyk.ac.id/" class="absolute inset-0"></a>
                             </div>
@@ -459,6 +475,38 @@
 
             </div>
         </div>
+
+        <div class="">
+            <div class="relative w-full h-full">
+                <div class="perspective">
+                    <div class="relative w-full h-48 transform transition-transform duration-700 hover:rotate-y-180">
+                        <!-- Front Side -->
+                        <div
+                            class="absolute inset-0 bg-yellow-400 text-gray-900 flex items-center justify-center backface-hidden">
+                            <h1 class="text-xl font-bold glow">
+                                <a href="#" class="hover:underline">Informasi Passing Grade</a>
+                            </h1>
+                        </div>
+                        <!-- Back Side -->
+                        <div
+                            class="absolute inset-0 bg-blue-500 text-white flex items-center justify-center transform rotate-y-180 backface-hidden opacity-0 transition-opacity duration-700 hover:opacity-100">
+                            <div class="p-4 text-center">
+                                <h1 class="text-xl font-bold glow mb-4">
+                                    <a href="#" class="hover:underline">
+                                        Lihat disini untuk informasi passing UPNVYK
+                                    </a>
+                                </h1>
+                                <button class="bg-yellow-400 text-gray-900 py-2 px-4 rounded-lg hover:bg-yellow-300">
+                                    Kunjungi
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- FOOTER -->
@@ -472,7 +520,8 @@
                 <ul class="space-y-2">
                     <li><a href="#Tentang" class="hover:text-gray-300">Tentang</a></li>
                     <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
-                    <li><a href="https://pmb.upnyk.ac.id/" class="hover:text-gray-300">Penerimaan Mahasiswa Baru</a></li>
+                    <li><a href="https://pmb.upnyk.ac.id/" class="hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+                    </li>
                     <li><a href="Rektorat.html" class="hover:text-gray-300">Rektorat</a></li>
                     <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
                 </ul>
