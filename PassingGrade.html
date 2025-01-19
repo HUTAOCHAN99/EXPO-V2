@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Grade dan Nilai SNBT UPN 2023/2024</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- BOX ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+</head>
+<style>
+    .bg-primary {
+        background-color: rgb(25, 135, 84);
+    }
+
+    .nav-mobile {
+        display: none;
+        /* Default disembunyikan */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(25, 135, 84, 255);
+        color: white;
+        z-index: 40;
+    }
+
+    .nav-mobile.open {
+        display: block;
+        animation: slide-down 0.3s ease-out;
+    }
+
+    .nav-mobile.closing {
+        animation: slide-up 0.3s ease-in;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+</style>
+
+<body>
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-primary z-50">
+        <nav class="w-full mx-auto flex items-center justify-between px-8 py-2">
+            <!-- Logo UPN -->
+            <a href="Landing_Page.html">
+                <img src="assets/img/index/logo.png" class="w-20 h-20 my-4" alt="Logo">
+            </a>
+
+            <!-- Menu Navigasi -->
+            <div class="hidden md:flex items-center space-x-8 hover:text-gray-300">
+                <a href="Home.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                <a href="Fakultas.html" class="text-white font-medium hover:text-gray-300">Fakultas</a>
+                <a href="https://pmb.upnyk.ac.id/" class="text-white font-medium hover:text-gray-300">Penerimaan
+                    Mahasiswa Baru</a>
+                <a href="Beasiswa.html" class="text-white font-medium hover:text-gray-300">Beasiswa</a>
+                <a href="AboutUs.html" class="text-white font-medium hover:text-gray-300">About Us</a>
+                <a href="ContactMe.html" class="text-white font-medium hover:text-gray-300">Contact Us</a>
+            </div>
+
+            <!-- Ikon menu untuk mobile -->
+            <div id="nav-toggle" class="md:hidden text-white text-5xl cursor-pointer">
+                <i class="bx bx-menu"></i>
+            </div>
+        </nav>
+
+        <!-- Navbar untuk mobile -->
+        <div id="mobile-nav" class="nav-mobile mt-24 rounded-lg border-2 border-gray-400">
+            <a href="Home.html" class="block py-2 px-4 hover:text-gray-300">Home</a>
+            <a href="Fakultas.html" class="block py-2 px-4 hover:text-gray-300">Fakultas</a>
+            <a href="https://pmb.upnyk.ac.id/" class="block py-2 px-4 hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+            <a href="Beasiswa.html" class="block py-2 px-4 hover:text-gray-300">Beasiswa</a>
+            <a href="AboutUs.html" class="block py-2 px-4 hover:text-gray-300">About Us</a>
+            <a href="ContactMe.html" class="block py-2 px-4 hover:text-gray-300">Contact Us</a>
+        </div>
+    </header>
+
+
+    <!-- Content -->
+    <div class="content mt-32 mb-8">
+        <div class="">
+            <div class="overflow-x-auto mx-8">
+                <h1 class="text-2xl font-semibold my-4">Nilai UTBK SNBT UPN Veteran Yogyakarta Kelompok Saintek</h1>
+                <table class="min-w-full table-auto border-collapse border border-gray-200 mb-4">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-200 px-4 py-2 text-left">NO</th>
+                            <th class="border border-gray-200 px-4 py-2 text-left">PRODI</th>
+                            <th class="border border-gray-200 px-4 py-2 text-left">Nilai UTBK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">1</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK GEOLOGI</td>
+                            <td class="border border-gray-200 px-4 py-2">642</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">2</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK PERTAMBANGAN</td>
+                            <td class="border border-gray-200 px-4 py-2">673</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">3</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK PERMINYAKAN</td>
+                            <td class="border border-gray-200 px-4 py-2">663</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">4</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK LINGKUNGAN</td>
+                            <td class="border border-gray-200 px-4 py-2">640</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">5</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK GEOFISIKA</td>
+                            <td class="border border-gray-200 px-4 py-2">604</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">6</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK KIMIA</td>
+                            <td class="border border-gray-200 px-4 py-2">618</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">7</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK INDUSTRI</td>
+                            <td class="border border-gray-200 px-4 py-2">647</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">8</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK INFORMATIKA</td>
+                            <td class="border border-gray-200 px-4 py-2">676</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">9</td>
+                            <td class="border border-gray-200 px-4 py-2">AGROTEKNOLOGI</td>
+                            <td class="border border-gray-200 px-4 py-2">668</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">10</td>
+                            <td class="border border-gray-200 px-4 py-2">AGRIBISNIS</td>
+                            <td class="border border-gray-200 px-4 py-2">643</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">11</td>
+                            <td class="border border-gray-200 px-4 py-2">METALURGI</td>
+                            <td class="border border-gray-200 px-4 py-2">587</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">12</td>
+                            <td class="border border-gray-200 px-4 py-2">ILMU TANAH</td>
+                            <td class="border border-gray-200 px-4 py-2">618</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">13</td>
+                            <td class="border border-gray-200 px-4 py-2">SISTEM INFORMASI</td>
+                            <td class="border border-gray-200 px-4 py-2">629</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">14</td>
+                            <td class="border border-gray-200 px-4 py-2">TEKNIK GEOMATIKA</td>
+                            <td class="border border-gray-200 px-4 py-2">585</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <h1 class="text-2xl font-semibold my-4">Nilai UTBK SNBT UPN Veteran Yogyakarta Kelompok Soshum</h1>
+                <table class="min-w-full table-auto border-collapse border border-gray-200 mb-4">
+                    <thead>
+                        <tr class="bg-gray-100">
+                            <th class="border border-gray-200 px-4 py-2 text-left">NO</th>
+                            <th class="border border-gray-200 px-4 py-2 text-left">PRODI</th>
+                            <th class="border border-gray-200 px-4 py-2 text-left">Nilai UTBK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">1</td>
+                            <td class="border border-gray-200 px-4 py-2">MANAJEMEN</td>
+                            <td class="border border-gray-200 px-4 py-2">674</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">2</td>
+                            <td class="border border-gray-200 px-4 py-2">AKUNTANSI</td>
+                            <td class="border border-gray-200 px-4 py-2">632</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">3</td>
+                            <td class="border border-gray-200 px-4 py-2">EKONOMI PEMBANGUNAN</td>
+                            <td class="border border-gray-200 px-4 py-2">605</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">4</td>
+                            <td class="border border-gray-200 px-4 py-2">ILMU HUBUNGAN INTERNASIONAL</td>
+                            <td class="border border-gray-200 px-4 py-2">613</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">5</td>
+                            <td class="border border-gray-200 px-4 py-2">ILMU ADMINISTRASI BISNIS</td>
+                            <td class="border border-gray-200 px-4 py-2">660</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">6</td>
+                            <td class="border border-gray-200 px-4 py-2">ILMU KOMUNIKASI</td>
+                            <td class="border border-gray-200 px-4 py-2">666</td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50">
+                            <td class="border border-gray-200 px-4 py-2">7</td>
+                            <td class="border border-gray-200 px-4 py-2">HUBUNGAN MASYARAKAT</td>
+                            <td class="border border-gray-200 px-4 py-2">602</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h1 class="text-2xl font-bold mb-5">Data Passing Grade SNBP UPN VY 2024/2025</h1>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300">
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="border px-4 py-2">No</th>
+                                <th class="border px-4 py-2">Nama Program Studi</th>
+                                <th class="border px-4 py-2">Jenjang</th>
+                                <th class="border px-4 py-2">Daya Tampung 2024</th>
+                                <th class="border px-4 py-2">Peminat 2023</th>
+                                <th class="border px-4 py-2">Keketatan</th>
+                                <th class="border px-4 py-2">Passing Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2">1</td>
+                                <td class="border px-4 py-2">Teknik Geologi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">524</td>
+                                <td class="border px-4 py-2">1:9</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">2</td>
+                                <td class="border px-4 py-2">Teknik Pertambangan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">1242</td>
+                                <td class="border px-4 py-2">1:21</td>
+                                <td class="border px-4 py-2">66%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">3</td>
+                                <td class="border px-4 py-2">Teknik Perminyakan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">602</td>
+                                <td class="border px-4 py-2">1:10</td>
+                                <td class="border px-4 py-2">58%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">4</td>
+                                <td class="border px-4 py-2">Teknik Lingkungan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">36</td>
+                                <td class="border px-4 py-2">304</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">56%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">5</td>
+                                <td class="border px-4 py-2">Teknik Geofisika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">24</td>
+                                <td class="border px-4 py-2">112</td>
+                                <td class="border px-4 py-2">1:5</td>
+                                <td class="border px-4 py-2">50%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">6</td>
+                                <td class="border px-4 py-2">Teknik Kimia</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">53</td>
+                                <td class="border px-4 py-2">251</td>
+                                <td class="border px-4 py-2">1:5</td>
+                                <td class="border px-4 py-2">50%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">7</td>
+                                <td class="border px-4 py-2">Teknik Industri</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">62</td>
+                                <td class="border px-4 py-2">500</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">56%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">8</td>
+                                <td class="border px-4 py-2">Teknik Informatika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">54</td>
+                                <td class="border px-4 py-2">860</td>
+                                <td class="border px-4 py-2">1:16</td>
+                                <td class="border px-4 py-2">64%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">9</td>
+                                <td class="border px-4 py-2">Agroteknologi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">364</td>
+                                <td class="border px-4 py-2">1:6</td>
+                                <td class="border px-4 py-2">52%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">10</td>
+                                <td class="border px-4 py-2">Agribisnis</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">47</td>
+                                <td class="border px-4 py-2">298</td>
+                                <td class="border px-4 py-2">1:6</td>
+                                <td class="border px-4 py-2">52%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">11</td>
+                                <td class="border px-4 py-2">Metalurgi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">24</td>
+                                <td class="border px-4 py-2">156</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">54%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">12</td>
+                                <td class="border px-4 py-2">Ilmu Tanah</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">30</td>
+                                <td class="border px-4 py-2">108</td>
+                                <td class="border px-4 py-2">1:4</td>
+                                <td class="border px-4 py-2">48%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">13</td>
+                                <td class="border px-4 py-2">Sistem Informasi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">42</td>
+                                <td class="border px-4 py-2">347</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">56%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">14</td>
+                                <td class="border px-4 py-2">Teknik Geomatika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">22</td>
+                                <td class="border px-4 py-2">56</td>
+                                <td class="border px-4 py-2">1:3</td>
+                                <td class="border px-4 py-2">45%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">15</td>
+                                <td class="border px-4 py-2">Manajemen</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">170</td>
+                                <td class="border px-4 py-2">1319</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">56%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">16</td>
+                                <td class="border px-4 py-2">Akuntansi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">102</td>
+                                <td class="border px-4 py-2">887</td>
+                                <td class="border px-4 py-2">1:9</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">17</td>
+                                <td class="border px-4 py-2">Ekonomi Pembangunan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">70</td>
+                                <td class="border px-4 py-2">519</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">54%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">18</td>
+                                <td class="border px-4 py-2">Ilmu Hubungan Internasional</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">53</td>
+                                <td class="border px-4 py-2">462</td>
+                                <td class="border px-4 py-2">1:9</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">19</td>
+                                <td class="border px-4 py-2">Ilmu Administrasi Bisnis</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">46</td>
+                                <td class="border px-4 py-2">519</td>
+                                <td class="border px-4 py-2">1:11</td>
+                                <td class="border px-4 py-2">60%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">20</td>
+                                <td class="border px-4 py-2">Ilmu Komunikasi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">53</td>
+                                <td class="border px-4 py-2">922</td>
+                                <td class="border px-4 py-2">1:17</td>
+                                <td class="border px-4 py-2">64%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">21</td>
+                                <td class="border px-4 py-2">Hubungan Masyarakat</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">46</td>
+                                <td class="border px-4 py-2">428</td>
+                                <td class="border px-4 py-2">1:9</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">22</td>
+                                <td class="border px-4 py-2">Teknik Kimia</td>
+                                <td class="border px-4 py-2">Diploma Tiga</td>
+                                <td class="border px-4 py-2">18</td>
+                                <td class="border px-4 py-2">11</td>
+                                <td class="border px-4 py-2">1:1</td>
+                                <td class="border px-4 py-2">30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h1 class="text-2xl font-bold mt-10 mb-5">Data Passing Grade SNBT UPN VY 2024/2025</h1>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-300">
+                        <thead class="bg-gray-200">
+                            <tr>
+                                <th class="border px-4 py-2">No</th>
+                                <th class="border px-4 py-2">Nama Program Studi</th>
+                                <th class="border px-4 py-2">Jenjang</th>
+                                <th class="border px-4 py-2">Daya Tampung 2024</th>
+                                <th class="border px-4 py-2">Peminat 2023</th>
+                                <th class="border px-4 py-2">Keketatan</th>
+                                <th class="border px-4 py-2">Passing Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border px-4 py-2">1</td>
+                                <td class="border px-4 py-2">Teknik Geologi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">153</td>
+                                <td class="border px-4 py-2">1343</td>
+                                <td class="border px-4 py-2">1:9</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">2</td>
+                                <td class="border px-4 py-2">Teknik Pertambangan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">80</td>
+                                <td class="border px-4 py-2">982</td>
+                                <td class="border px-4 py-2">1:12</td>
+                                <td class="border px-4 py-2">62%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">3</td>
+                                <td class="border px-4 py-2">Teknik Perminyakan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">80</td>
+                                <td class="border px-4 py-2">1061</td>
+                                <td class="border px-4 py-2">1:13</td>
+                                <td class="border px-4 py-2">63%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">4</td>
+                                <td class="border px-4 py-2">Teknik Lingkungan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">54</td>
+                                <td class="border px-4 py-2">349</td>
+                                <td class="border px-4 py-2">1:6</td>
+                                <td class="border px-4 py-2">55%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">5</td>
+                                <td class="border px-4 py-2">Teknik Geofisika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">36</td>
+                                <td class="border px-4 py-2">94</td>
+                                <td class="border px-4 py-2">1:3</td>
+                                <td class="border px-4 py-2">46%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">6</td>
+                                <td class="border px-4 py-2">Teknik Kimia</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">79</td>
+                                <td class="border px-4 py-2">262</td>
+                                <td class="border px-4 py-2">1:3</td>
+                                <td class="border px-4 py-2">47%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">7</td>
+                                <td class="border px-4 py-2">Teknik Industri</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">83</td>
+                                <td class="border px-4 py-2">404</td>
+                                <td class="border px-4 py-2">1:5</td>
+                                <td class="border px-4 py-2">51%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">8</td>
+                                <td class="border px-4 py-2">Teknik Informatika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">101</td>
+                                <td class="border px-4 py-2">798</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">58%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">9</td>
+                                <td class="border px-4 py-2">Agroteknologi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">80</td>
+                                <td class="border px-4 py-2">348</td>
+                                <td class="border px-4 py-2">1:4</td>
+                                <td class="border px-4 py-2">50%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">10</td>
+                                <td class="border px-4 py-2">Agribisnis</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">299</td>
+                                <td class="border px-4 py-2">1:5</td>
+                                <td class="border px-4 py-2">52%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">11</td>
+                                <td class="border px-4 py-2">Metalurgi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">36</td>
+                                <td class="border px-4 py-2">125</td>
+                                <td class="border px-4 py-2">1:4</td>
+                                <td class="border px-4 py-2">48%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">12</td>
+                                <td class="border px-4 py-2">Ilmu Tanah</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">60</td>
+                                <td class="border px-4 py-2">129</td>
+                                <td class="border px-4 py-2">1:2</td>
+                                <td class="border px-4 py-2">43%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">13</td>
+                                <td class="border px-4 py-2">Sistem Informasi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">63</td>
+                                <td class="border px-4 py-2">463</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">55%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">14</td>
+                                <td class="border px-4 py-2">Teknik Geomatika</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">36</td>
+                                <td class="border px-4 py-2">70</td>
+                                <td class="border px-4 py-2">1:2</td>
+                                <td class="border px-4 py-2">42%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">15</td>
+                                <td class="border px-4 py-2">Manajemen</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">230</td>
+                                <td class="border px-4 py-2">1239</td>
+                                <td class="border px-4 py-2">1:5</td>
+                                <td class="border px-4 py-2">51%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">16</td>
+                                <td class="border px-4 py-2">Akuntansi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">137</td>
+                                <td class="border px-4 py-2">912</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">53%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">17</td>
+                                <td class="border px-4 py-2">Ekonomi Pembangunan</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">94</td>
+                                <td class="border px-4 py-2">541</td>
+                                <td class="border px-4 py-2">1:6</td>
+                                <td class="border px-4 py-2">54%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">18</td>
+                                <td class="border px-4 py-2">Ilmu Hubungan Internasional</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">80</td>
+                                <td class="border px-4 py-2">621</td>
+                                <td class="border px-4 py-2">1:8</td>
+                                <td class="border px-4 py-2">57%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">19</td>
+                                <td class="border px-4 py-2">Ilmu Administrasi Bisnis</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">73</td>
+                                <td class="border px-4 py-2">519</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">53%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">20</td>
+                                <td class="border px-4 py-2">Ilmu Komunikasi</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">80</td>
+                                <td class="border px-4 py-2">942</td>
+                                <td class="border px-4 py-2">1:12</td>
+                                <td class="border px-4 py-2">61%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">21</td>
+                                <td class="border px-4 py-2">Hubungan Masyarakat</td>
+                                <td class="border px-4 py-2">Sarjana</td>
+                                <td class="border px-4 py-2">63</td>
+                                <td class="border px-4 py-2">412</td>
+                                <td class="border px-4 py-2">1:7</td>
+                                <td class="border px-4 py-2">54%</td>
+                            </tr>
+                            <tr>
+                                <td class="border px-4 py-2">22</td>
+                                <td class="border px-4 py-2">Teknik Kimia</td>
+                                <td class="border px-4 py-2">Diploma Tiga</td>
+                                <td class="border px-4 py-2">36</td>
+                                <td class="border px-4 py-2">26</td>
+                                <td class="border px-4 py-2">1:1</td>
+                                <td class="border px-4 py-2">38%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto flex flex-wrap justify-between">
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Kampus
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="#Tentang" class="hover:text-gray-300">Tentang</a></li>
+                    <li><a href="Fakultas.html" class="hover:text-gray-300">Fakultas</a></li>
+                    <li><a href="https://pmb.upnyk.ac.id/" class="hover:text-gray-300">Penerimaan Mahasiswa Baru</a>
+                    </li>
+                    <li><a href="Rektorat.html" class="hover:text-gray-300">Rektorat</a></li>
+                    <li><a href="Beasiswa.html" class="hover:text-gray-300">Beasiswa</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4 mb-8 md:mb-0">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Profile
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <ul class="space-y-2">
+                    <li><a href="AboutUs.html" class="hover:text-gray-300">About Us</a></li>
+                    <li><a href="ContactMe.html" class="hover:text-gray-300">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col w-full md:w-1/4 px-4">
+                <h4 class="text-lg font-semibold relative mb-6">
+                    Ikuti Kami
+                    <span class="block w-12 h-0.5 bg-green-500 absolute left-0 bottom-0"></span>
+                </h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/ahmad.z.an.75457" class="hover:text-gray-300"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/HUTAOCHAN99" class="hover:text-gray-300"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ahmad_zhofir_a_nayif/" class="hover:text-gray-300"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmad-zhofir-amanullah-nayif-56130a285/"
+                        class="hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm mt-8">
+            <p>&copy;Copyright 2024 <a href="https://github.com/HUTAOCHAN99" class="hover:text-gray-500"
+                    target="_blank">HUTAOCHAN99</a>. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+<script>
+
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    let isAnimating = false;
+    navToggle.addEventListener('click', () => {
+        if (isAnimating) return;
+        if (mobileNav.classList.contains('open')) {
+            isAnimating = true;
+            mobileNav.classList.remove('open');
+            mobileNav.classList.add('closing');
+            setTimeout(() => {
+                mobileNav.classList.remove('closing');
+                isAnimating = false;
+            }, 300);
+        } else {
+            isAnimating = true;
+            mobileNav.classList.add('open');
+            setTimeout(() => {
+                isAnimating = false;
+            }, 300);
+        }
+    });
+
+    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            mobileNav.classList.remove('open');
+            mobileNav.classList.remove('closing');
+        }
+    });
+
+</script>
+
+</html>

@@ -2,10 +2,10 @@
   var CardSlider = new Swiper('.card-slider', {
     effect: 'coverflow',
     grabCursor: true,
-    centeredSlides: true, // Menjaga slide tengah tetap di tengah
+    centeredSlides: true,
     loop: true,
-    slidesPerView: 3, // Menampilkan 3 slide dalam satu waktu
-    spaceBetween: 10, // Menambahkan jarak antar slide
+    slidesPerView: 3,
+    spaceBetween: 10,
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
@@ -25,9 +25,9 @@
             const slides = document.querySelectorAll('.swiper-slide');
             slides.forEach((slide, index) => {
                 if (index === this.activeIndex || index === this.activeIndex + 1 || index === this.activeIndex - 1) {
-                    slide.style.zIndex = '1'; // Slide tengah dan slide kiri/kanan mendapat lapisan depan
+                    slide.style.zIndex = '1';
                 } else {
-                    slide.style.zIndex = '0'; // Slide lain berada di belakang
+                    slide.style.zIndex = '0';
                 }
             });
         },

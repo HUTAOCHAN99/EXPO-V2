@@ -21,7 +21,6 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <style>
-    /* Typing Nama_Fakultas */
     @keyframes blink {
         50% {
             border-color: transparent;
@@ -71,7 +70,6 @@
 
     .nav-mobile {
         display: none;
-        /* Default disembunyikan */
         position: absolute;
         top: 0;
         left: 0;
@@ -95,7 +93,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        /* Pastikan teks tetap di tengah */
         overflow: hidden;
         height: 100vh;
     }
@@ -140,7 +137,6 @@
 
         20% {
             transform: translateY(-5px);
-            /* Lebih sedikit naik */
         }
 
         40% {
@@ -149,7 +145,6 @@
 
         60% {
             transform: translateY(-2px);
-            /* Naik sedikit lagi */
         }
 
         80% {
@@ -166,16 +161,13 @@
         z-index: 1000;
         position: absolute;
         bottom: 0;
-        /* Tepat di dasar */
         left: 50%;
         transform: translateX(-50%);
         font-size: 3rem;
         color: white;
         animation: smooth-bounce 1.5s ease-in-out infinite;
         margin-bottom: 0;
-        /* Pastikan tidak ada margin tambahan */
         padding: 10px;
-        /* Tambahan opsional untuk estetika */
     }
 </style>
 
@@ -400,11 +392,11 @@
         function updateFontSize() {
             const width = window.innerWidth;
             if (width >= 768) {
-                typingAnimation.style.fontSize = '2rem'; // md:text-2xl
+                typingAnimation.style.fontSize = '2rem';
             } else if (width >= 640) {
-                typingAnimation.style.fontSize = '1.5rem'; // sm:text-xl
+                typingAnimation.style.fontSize = '1.5rem';
             } else {
-                typingAnimation.style.fontSize = '1rem'; // Default size
+                typingAnimation.style.fontSize = '1rem';
             }
         }
 
@@ -412,7 +404,7 @@
             const text = currentTextIndex === 0 ? text_1 : text_2;
             typingAnimation.textContent = '';
 
-            const typingSpeed = 150; // Kecepatan tetap per karakter (milidetik)
+            const typingSpeed = 150;
             let charIndex = 0;
 
             const typeInterval = setInterval(() => {
@@ -432,39 +424,37 @@
             }, typingSpeed);
         }
 
-        updateFontSize(); // Set font size pertama kali
-        typeText(); // Mulai animasi mengetik
+        updateFontSize();
+        typeText();
 
-        window.addEventListener('resize', updateFontSize); // Perbarui ukuran font saat jendela diubah ukurannya
+        window.addEventListener('resize', updateFontSize);
     });
 
 
     document.addEventListener("DOMContentLoaded", () => {
-        // Mulai animasi tanpa delay pada awal
-        typeText(); // langsung memulai typing tanpa delay
+        typeText();
     });
 
     const navToggle = document.getElementById('nav-toggle');
     const mobileNav = document.getElementById('mobile-nav');
     let isAnimating = false;
     navToggle.addEventListener('click', () => {
-        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (isAnimating) return;
         if (mobileNav.classList.contains('open')) {
-            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
             isAnimating = true;
             mobileNav.classList.remove('open');
             mobileNav.classList.add('closing');
             setTimeout(() => {
                 mobileNav.classList.remove('closing');
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-up
+            }, 300);
         } else {
             // Jika navbar tertutup, buka dengan animasi slide-down
             isAnimating = true;
             mobileNav.classList.add('open');
             setTimeout(() => {
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-down
+            }, 300);
         }
     });
 

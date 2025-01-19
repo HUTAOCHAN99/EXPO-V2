@@ -21,61 +21,16 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <style>
-    /* Typing Nama_Fakultas */
-    @keyframes blink {
-        50% {
-            border-color: transparent;
-        }
-    }
-
     .bg-primary {
         background-color: rgb(25, 135, 84);
     }
 
-    .typing-animation {
-        display: inline-block;
-        overflow: visible;
-        border-right: 0.15em solid white;
-        white-space: nowrap;
-        line-height: 1.5;
-    }
-
-    .blink {
-        animation: blink 0.75s step-end infinite;
-    }
-
     .bg-primary {
         background-color: rgb(25, 135, 84);
-    }
-
-    /* Animasi floating */
-    @keyframes slide-down {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slide-up {
-        from {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        to {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
     }
 
     .nav-mobile {
         display: none;
-        /* Default disembunyikan */
         position: absolute;
         top: 0;
         left: 0;
@@ -94,40 +49,10 @@
         animation: slide-up 0.3s ease-in;
     }
 
-
-    /* arrow  */
-    /* Smooth scrolling */
     html {
         scroll-behavior: smooth;
     }
 
-    @keyframes smooth-bounce {
-        0% {
-            transform: translateY(0);
-        }
-
-        20% {
-            transform: translateY(-5px);
-            /* Lebih sedikit naik */
-        }
-
-        40% {
-            transform: translateY(0);
-        }
-
-        60% {
-            transform: translateY(-2px);
-            /* Naik sedikit lagi */
-        }
-
-        80% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
 </style>
 
 <body>
@@ -167,8 +92,6 @@
         </div>
     </header>
 
-
-    <!-- Parallax Section: Content -->
     <div class="content mt-32 flex justify-center items-center h-screen" id="content-1">
         <div class="bg-white shadow-lg rounded-lg p-8 md:p-12 max-w-lg text-center relative">
             <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Hello,guys👋</h1>
@@ -210,8 +133,6 @@
 
         </div>
     </div>
-
-
 
     <!-- FOOTER -->
     <footer class="bg-gray-800 text-white py-12">
@@ -265,7 +186,7 @@
     const mobileNav = document.getElementById('mobile-nav');
     let isAnimating = false;
     navToggle.addEventListener('click', () => {
-        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (isAnimating) return;
         if (mobileNav.classList.contains('open')) {
             // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
             isAnimating = true;
@@ -274,7 +195,7 @@
             setTimeout(() => {
                 mobileNav.classList.remove('closing');
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-up
+            }, 300);
         } else {
             // Jika navbar tertutup, buka dengan animasi slide-down
             isAnimating = true;
@@ -293,15 +214,11 @@
         }
     });
 
-    // untuk copy
     function copyEmail() {
-        // Ambil email dari elemen dengan ID "email"
         const email = document.getElementById('email').textContent;
 
-        // Gunakan Clipboard API untuk menyalin teks
         navigator.clipboard.writeText(email)
             .then(() => {
-                // Tampilkan pesan sukses
                 const message = document.getElementById('copy-message');
                 message.classList.remove('hidden');
                 setTimeout(() => message.classList.add('hidden'), 2000);

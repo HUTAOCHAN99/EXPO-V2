@@ -75,7 +75,6 @@
         .nav-mobile {
             display: none;
             position: fixed;
-            /* Ganti absolute dengan fixed */
             top: 0;
             width: 100%;
             background-color: rgba(25, 135, 84, 255);
@@ -85,7 +84,6 @@
 
         .nav-item.active {
             color: #939393;
-            /* Warna untuk tombol aktif */
         }
 
         .nav-item::after {
@@ -102,7 +100,6 @@
 
         .nav-item.active::after {
             width: 100%;
-            /* Garis bawah penuh untuk elemen aktif */
         }
 
         .nav-mobile.open {
@@ -124,12 +121,10 @@
 
         .sembunyi {
             display: none !important;
-            /* Sembunyikan elemen */
         }
 
         .dropdown-menu {
             display: block;
-            /* Default: Tampilkan */
         }
 
         .dropdown-menu .dropdown-item:hover {
@@ -140,7 +135,6 @@
             display: flex;
         }
 
-        /* Hide navigation for mobile */
         @media (max-width: 768px) {
             .navigation {
                 display: none;
@@ -151,7 +145,6 @@
             }
         }
 
-        /* Show navigation for desktop */
         @media (min-width: 769px) {
             .navigation {
                 display: flex;
@@ -233,7 +226,6 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
             /* carousel */
-
             .carousel {
                 width: 100vw;
                 height: calc(100vh - 125px);
@@ -385,7 +377,6 @@
 
             /* Carousel */
             /* next / prev arrows */
-
             .arrows {
                 position: absolute;
                 top: 80%;
@@ -609,7 +600,7 @@
             mobileNav.classList.add('open');
             setTimeout(() => {
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-down
+            }, 300);
         }
     });
 

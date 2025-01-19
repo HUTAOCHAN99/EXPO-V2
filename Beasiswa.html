@@ -21,57 +21,12 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 </head>
 <style>
-    /* Typing Nama_Fakultas */
-    @keyframes blink {
-        50% {
-            border-color: transparent;
-        }
-    }
-
-    .typing-animation {
-        display: inline-block;
-        overflow: visible;
-        border-right: 0.15em solid white;
-        white-space: nowrap;
-        line-height: 1.5;
-    }
-
-    .blink {
-        animation: blink 0.75s step-end infinite;
-    }
-
     .bg-primary {
         background-color: rgb(25, 135, 84);
     }
 
-    /* Animasi floating */
-    @keyframes slide-down {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes slide-up {
-        from {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        to {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-    }
-
     .nav-mobile {
         display: none;
-        /* Default disembunyikan */
         position: absolute;
         top: 0;
         left: 0;
@@ -90,39 +45,8 @@
         animation: slide-up 0.3s ease-in;
     }
 
-
-    /* arrow  */
-    /* Smooth scrolling */
     html {
         scroll-behavior: smooth;
-    }
-
-    @keyframes smooth-bounce {
-        0% {
-            transform: translateY(0);
-        }
-
-        20% {
-            transform: translateY(-5px);
-            /* Lebih sedikit naik */
-        }
-
-        40% {
-            transform: translateY(0);
-        }
-
-        60% {
-            transform: translateY(-2px);
-            /* Naik sedikit lagi */
-        }
-
-        80% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
     }
 </style>
 
@@ -228,10 +152,6 @@
         </div>
     </div>
     
-    
-
-
-
     <!-- FOOTER -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto flex flex-wrap justify-between">
@@ -284,27 +204,24 @@
     const mobileNav = document.getElementById('mobile-nav');
     let isAnimating = false;
     navToggle.addEventListener('click', () => {
-        if (isAnimating) return; // Mencegah animasi tumpang tindih
+        if (isAnimating) return; 
         if (mobileNav.classList.contains('open')) {
-            // Jika navbar sedang terbuka, tambahkan animasi slide-up sebelum ditutup
             isAnimating = true;
             mobileNav.classList.remove('open');
             mobileNav.classList.add('closing');
             setTimeout(() => {
                 mobileNav.classList.remove('closing');
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-up
+            }, 300); 
         } else {
-            // Jika navbar tertutup, buka dengan animasi slide-down
             isAnimating = true;
             mobileNav.classList.add('open');
             setTimeout(() => {
                 isAnimating = false;
-            }, 300); // Durasi animasi slide-down
+            }, 300); 
         }
     });
 
-    // Menutup navbar secara otomatis jika layar diubah ke ukuran md ke atas
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
             mobileNav.classList.remove('open');

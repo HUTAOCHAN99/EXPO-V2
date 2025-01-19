@@ -10,16 +10,15 @@ var nextBtn = document.querySelector(".next"),
 
 let timeRunning = 3000;
 let timeAutoNext = 7000;
-let currentIndex = 0; // Track active index for updates
+let currentIndex = 0;
 
-// Event handlers for next and previous buttons
 nextBtn.onclick = () => showSlider("next");
 prevBtn.onclick = () => showSlider("prev");
 
 // Reset time animation
 function resetTimeAnimation() {
   runningTime.style.animation = "none";
-  runningTime.offsetHeight; // Trigger reflow
+  runningTime.offsetHeight;
   runningTime.style.animation = "runningTime 7s linear 1 forwards";
 }
 
@@ -56,7 +55,7 @@ function resetAutoNext() {
 // Handle manual navigation by nav-items
 navItems.forEach((item, index) => {
   item.addEventListener("click", () => {
-    goToItem(index); // Directly navigate to the slide based on index
+    goToItem(index);
   });
 });
 
@@ -71,42 +70,36 @@ const dropdownBtn = document.getElementById("dropdown-btn");
 const dropdownMenu = document.getElementById("dropdown-menu");
 const dropdownItems = document.querySelectorAll(".dropdown-item");
 
-// Toggle dropdown visibility
 dropdownBtn.addEventListener("click", () => {
   dropdownMenu.classList.toggle("sembunyi");
 });
 
-// Handle dropdown item clicks
 dropdownItems.forEach((item, index) => {
   item.addEventListener("click", (e) => {
-    e.stopPropagation(); // Prevent event bubbling
-    goToItem(index); // Directly navigate to the selected slide
-    dropdownMenu.classList.add("sembunyi"); // Hide the dropdown after selection
+    e.stopPropagation();
+    goToItem(index)
+    dropdownMenu.classList.add("sembunyi");
   });
 });
 
-// Optimized function to go directly to the slide based on index
+
 function goToItem(index) {
   const totalSlides = slides.length;
-
-  // Avoid unnecessary movement if the target is already the current index
   if (currentIndex === index) return;
 
-  // Move slides directly to the target index
   let slidesToMove = index - currentIndex;
   if (slidesToMove > 0) {
     for (let i = 0; i < slidesToMove; i++) {
-      list.appendChild(list.firstElementChild); // Move one slide forward
+      list.appendChild(list.firstElementChild);
     }
   } else if (slidesToMove < 0) {
     for (let i = 0; i < Math.abs(slidesToMove); i++) {
-      list.prepend(list.lastElementChild); // Move one slide backward
+      list.prepend(list.lastElementChild);
     }
   }
 
-  // After moving the target slide to the front, update the current index
   currentIndex = index;
-  updateActiveNav(currentIndex); // Update the navigation to reflect the current slide
-  resetTimeAnimation(); // Reset the animation to start over
-  resetAutoNext(); // Reset auto-next timer to avoid the carousel moving on its own
+  updateActiveNav(currentIndex);
+  resetTimeAnimation();
+  resetAutoNext();
 }
